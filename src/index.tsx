@@ -17,21 +17,17 @@ import {Books} from "./routes/books/Books";
 import { SignOut } from './routes/identity/SignOut';
 import {AdminDashboard} from "./components/AdminDashboard";
 import {BookForm} from "./components/library/BookForm";
+import {Dashboard} from "./components/Dashboard";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Root />,
+        element: <SignIn />,
         errorElement: <ErrorPage />,
         children: [
             {
                 path: "/Register",
                 element: <Register />,
-                errorElement: <ErrorPage />
-            },
-            {
-                path: "/SignIn",
-                element: <SignIn />,
                 errorElement: <ErrorPage />
             },
             {
@@ -57,6 +53,11 @@ const router = createBrowserRouter([
             {
                 path: "/Admin",
                 element: <AdminDashboard/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/Dashboard",
+                element: <Dashboard/>,
                 errorElement: <ErrorPage/>
             }
         ]
