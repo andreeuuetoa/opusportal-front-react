@@ -17,16 +17,22 @@ import { SignOut } from './routes/identity/SignOut';
 import {AdminDashboard} from "./components/AdminDashboard";
 import {BookForm} from "./components/library/BookForm";
 import {Dashboard} from "./components/Dashboard";
+import {Root} from "./routes/Root";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <SignIn />,
+        element: <Root />,
         errorElement: <ErrorPage />,
         children: [
             {
                 path: "/Register",
                 element: <Register />,
+                errorElement: <ErrorPage />
+            },
+            {
+                path: "/SignIn",
+                element: <SignIn />,
                 errorElement: <ErrorPage />
             },
             {
