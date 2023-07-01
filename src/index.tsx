@@ -7,7 +7,6 @@ import './site.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Root} from "./routes/Root";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ErrorPage } from './routes/ErrorPage';
 import {Register} from "./routes/identity/Register";
