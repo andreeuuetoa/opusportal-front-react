@@ -22,15 +22,12 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
                 return request;
             });
 
-            console.log('Books response: ', response);
             if (response.status === 200) {
                 return response.data;
             }
             return undefined;
         } catch (error) {
-            console.log('Error: ', (error as Error).message);
             if ((error as AxiosError).response?.status === 401) {
-                console.log("JWT expired, refreshing...");
                 let identityService = new IdentityService();
                 let refreshedJWT = await identityService.refreshToken(JWT);
 
