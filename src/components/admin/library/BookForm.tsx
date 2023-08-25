@@ -1,8 +1,8 @@
 import React, {useContext, useState} from "react";
-import {IBook} from "../../domain/contracts/IBook";
+import {IBook} from "../../../domain/contracts/IBook";
 import {BookFormView} from "./BookFormView";
-import {BookService} from "../../services/BookService";
-import {JWTContext} from "../../routes/Root";
+import {BookService} from "../../../services/BookService";
+import {JWTContext} from "../../../routes/Root";
 
 export const BookForm = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);

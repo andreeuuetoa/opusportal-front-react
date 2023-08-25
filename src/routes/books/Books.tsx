@@ -2,7 +2,7 @@ import {useContext, useEffect, useState} from "react";
 import {JWTContext} from "../Root";
 import {BookService} from "../../services/BookService";
 import {IBook} from "../../domain/contracts/IBook";
-import {BooksTable} from "../../components/library/BooksTable";
+import {BooksTable} from "../../components/admin/library/BooksTable";
 import {Link} from "react-router-dom";
 
 

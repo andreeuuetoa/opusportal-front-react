@@ -1,5 +1,5 @@
 import React from "react";
-import {IRegisterData} from "../../../DTO/IRegisterData";
+import {IRegisterData} from "../../../../DTO/IRegisterData";
 
 export interface IRegisterProps {
     values: IRegisterData;

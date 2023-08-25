@@ -14,9 +14,9 @@ import {SignIn} from "./routes/identity/SignIn";
 import {Privacy} from "./routes/Privacy";
 import {Books} from "./routes/books/Books";
 import { SignOut } from './routes/identity/SignOut';
-import {AdminDashboard} from "./components/AdminDashboard";
-import {BookForm} from "./components/library/BookForm";
-import {Dashboard} from "./components/Dashboard";
+import {AdminDashboard} from "./components/admin/AdminDashboard";
+import {BookForm} from "./components/admin/library/BookForm";
+import {Dashboard} from "./components/user/Dashboard";
 import {Root} from "./routes/Root";
 
 const router = createBrowserRouter([

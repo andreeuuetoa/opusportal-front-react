@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
-import {JWTContext} from "../routes/Root";
+import {JWTContext} from "../../routes/Root";
 
 export const Header = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
