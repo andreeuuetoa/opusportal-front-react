@@ -1,6 +1,15 @@
+import { StudentDashboard } from "./StudentDashboard";
+import {TeacherDashboard} from "./TeacherDashboard";
+import {ErrorPage} from "../../routes/ErrorPage";
+
 export const Dashboard = () => {
-    return (
-        <>
-        </>
-    );
+    const role = "Student";
+
+    if (role === "Student") {
+        return <StudentDashboard/>;
+    } else if (role === "Teacher") {
+        return <TeacherDashboard/>;
+    } else {
+        return <ErrorPage/>;
+    }
 }

@@ -9,16 +9,15 @@ interface IError {
 
 export const ErrorPage = () => {
     const error = useRouteError() as IError;
-    console.log(error);
 
     return (
         <>
             <Header/>
             <div id="error-page" className="container">
-                <h1>Oops!</h1>
-                <p>Sorry, an unexpected error has occurred.</p>
+                <h1>Ups!</h1>
+                <p>Vabandust, midagi läks ootamatult valesti.</p>
                 <p>
-                    <i>{error.statusText || error.message}</i>
+                    Viga: <i>{error.statusText || error.message}</i>
                 </p>
             </div>
             <Footer/>
