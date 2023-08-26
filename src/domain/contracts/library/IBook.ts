@@ -1,4 +1,4 @@
-import {IBaseEntity} from "./IBaseEntity";
+import {IBaseEntity} from "../IBaseEntity";
 
 export interface IBook extends IBaseEntity {
     name: string,

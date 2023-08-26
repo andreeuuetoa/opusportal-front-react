@@ -1,4 +1,4 @@
-import {IBook} from "../contracts/IBook";
+import {IBook} from "../contracts/library/IBook";
 import {BaseEntity} from "../BaseEntity";
 
 export class Book extends BaseEntity implements IBook {
