@@ -1,9 +1,9 @@
-import {Link} from "react-router-dom";
+import {AdminNavbar} from "../../components/AdminNavbar";
 
 export const AdminDashboard = () => {
     return (
         <>
-
+            <AdminNavbar/>
         </>
     );
 }

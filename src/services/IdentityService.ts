@@ -39,6 +39,10 @@ export class IdentityService extends BaseService {
         }
     }
 
+    async signOut(JWT: IJWTResponse) {
+
+    }
+
     async refreshToken(JWT: IJWTResponse) {
         console.log(JWT);
 

@@ -18,51 +18,64 @@ import {AdminDashboard} from "./routes/admin/AdminDashboard";
 import {BookForm} from "./routes/admin/library/BookForm";
 import {Dashboard} from "./routes/user/Dashboard";
 import {Root} from "./routes/Root";
+import {Concerts} from "./routes/admin/concerts/Concerts";
+import {Competitions} from "./routes/admin/competitions/Competitions";
+import {Users} from "./routes/admin/users/Users";
 
 const router = createBrowserRouter([
+    {
+        path: "/logi-sisse",
+        element: <SignIn />,
+        errorElement: <ErrorPage />
+    },
     {
         path: "/",
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
             {
-                path: "/Register",
-                element: <Register />,
-                errorElement: <ErrorPage />
-            },
-            {
-                path: "/SignIn",
-                element: <SignIn />,
-                errorElement: <ErrorPage />
-            },
-            {
-                path: "/SignOut",
+                path: "/logi-valja",
                 element: <SignOut />,
                 errorElement: <ErrorPage />
             },
             {
-                path: "/Privacy/:id",
+                path: "/privacy/:id",
                 element: <Privacy/>,
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/Books/:id?",
-                element: <Books/>,
-                errorElement: <ErrorPage/>
-            },
-            {
-                path: "/BookForm",
-                element: <BookForm/>,
-                errorElement: <ErrorPage/>
-            },
-            {
-                path: "/Admin",
+                path: "/admin",
                 element: <AdminDashboard/>,
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/Dashboard",
+                path: "/dashboard",
                 element: <Dashboard/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/raamatud/:id?",
+                element: <Books/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/sisesta-raamat",
+                element: <BookForm/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/kontserdid",
+                element: <Concerts/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/konkursid",
+                element: <Competitions/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/kasutajad",
+                element: <Users/>,
                 errorElement: <ErrorPage/>
             }
         ]

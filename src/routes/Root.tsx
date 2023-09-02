@@ -1,6 +1,6 @@
 import {Header} from "../components/Header";
 import {Footer} from "../components/Footer";
-import { Outlet } from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import {createContext, useState} from "react";
 import {IJWTResponse} from "../DTO/IJWTResponse";
 
@@ -11,6 +11,11 @@ export const JWTContext = createContext<{
 
 export const Root = () => {
     const [JWTResponse, setJWTResponse] = useState(null as IJWTResponse | null);
+    const navigate = useNavigate();
+
+    if (JWTResponse === null) {
+        navigate("/logi-sisse");
+    }
 
     return (
         <JWTContext.Provider value={{JWTResponse, setJWTResponse}}>

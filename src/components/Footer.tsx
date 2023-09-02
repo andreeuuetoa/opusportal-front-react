@@ -7,18 +7,10 @@ export const Footer = () => {
 
     return (
         <footer>
-            <nav className="navbar footer bg-black">
+            <nav className="footer bg-black">
                 <div className="container">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link to={`/Privacy/${JWTResponse}`}>Privacy</Link>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a target="_blank" href="https://localhost:7177/swagger/index.html">For developers</a>
-                        </li>
-                    </ul>
+                    <a target="_blank" href="" className="footer-nav">Õppematerjalid</a>
+                    <a target="_blank" href="" className="footer-nav">Kohustuslikud materjalid/kirjandus</a>
                 </div>
             </nav>
         </footer>

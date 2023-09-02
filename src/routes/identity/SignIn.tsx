@@ -45,7 +45,11 @@ export const SignIn = () => {
 
         if (setJWTResponse) {
             setJWTResponse(JWTData);
-            navigate("/Admin");
+            if (JWTData.role === "admin") {
+                navigate("/admin");
+            } else {
+                navigate("/dashboard");
+            }
         }
     };
 

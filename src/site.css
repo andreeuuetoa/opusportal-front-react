@@ -68,6 +68,18 @@ button.accept-policy {
     line-height: 60px;
 }
 
+.footer-nav {
+    display: block;
+}
+
+.signin-form {
+    max-width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
 .table-row {
     margin-right: 100px;
 }

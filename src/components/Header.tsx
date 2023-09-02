@@ -8,7 +8,7 @@ export const Header = () => {
     return (
         <header>
             <nav
-                className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
+                className="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black box-shadow">
                 <div className="container">
                     <Link className="navbar-brand text-light" to="/">MUBA OpusPortal</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
