@@ -1,6 +1,6 @@
 import { StudentDashboard } from "./StudentDashboard";
 import {TeacherDashboard} from "./TeacherDashboard";
-import {ErrorPage} from "../../routes/ErrorPage";
+import {ErrorPage} from "../ErrorPage";
 
 export const Dashboard = () => {
     const role = "Student";

@@ -1,4 +1,4 @@
-import {RegisterFormView} from "../../components/admin/identity/register/RegisterFormView";
+import {RegisterFormView} from "../admin/identity/register/RegisterFormView";
 import React, {useContext, useState} from "react";
 import {IRegisterData} from "../../DTO/IRegisterData";
 import {IdentityService} from "../../services/IdentityService";
