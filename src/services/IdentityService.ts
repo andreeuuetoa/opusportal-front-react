@@ -2,7 +2,6 @@ import {BaseService} from "./BaseService";
 import {IJWTResponse} from "../DTO/IJWTResponse";
 import {IRegisterData} from "../DTO/IRegisterData";
 import {ISignInData} from "../DTO/ISignInData";
-import {data} from "jquery";
 
 export class IdentityService extends BaseService {
     constructor() {
@@ -39,8 +38,27 @@ export class IdentityService extends BaseService {
         }
     }
 
-    async signOut(JWT: IJWTResponse) {
+    async signOut(JWTdata: IJWTResponse) {
+        try {
+            const response = await this.axios.post(
+                'SignOut',
+                JWTdata,
+                {
+                    headers: {
+                        'Authorization': 'Bearer ' + JWTdata.JWT
+                    }
+                }
+            );
 
+            console.log('Sign-out response: ', response);
+            if (response.status === 200) {
+                return true;
+            }
+            return undefined;
+        } catch (error) {
+            console.log('Error: ', (error as Error).message);
+            return undefined;
+        }
     }
 
     async refreshToken(JWT: IJWTResponse) {

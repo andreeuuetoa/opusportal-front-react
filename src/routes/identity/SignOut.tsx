@@ -13,14 +13,14 @@ export const SignOut = () => {
             identityService.signOut(JWTResponse).then(() => {
                 if (setJWTResponse) {
                     setJWTResponse(null);
-                    navigate("/");
+                    navigate("/logi-sisse");
                 }
             });
     }, []);
 
     return (
         <>
-            Log out
+            Login välja...
         </>
     );
 }
