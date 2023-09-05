@@ -1,5 +1,5 @@
 import {IRegisterProps} from "./IRegisterProps";
-import {IdentityFormPart} from "../IdentityFormPart";
+import {IdentityFormPart} from "../../../../components/IdentityForm/IdentityFormPart";
 import React from "react";
 
 export const RegisterFormView = (props: IRegisterProps) => {

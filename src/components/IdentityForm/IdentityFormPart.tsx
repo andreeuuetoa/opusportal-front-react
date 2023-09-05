@@ -1,6 +1,6 @@
-import {IRegisterFormField} from "./register/IRegisterFormField";
+import {IIdentityFormField} from "./IIdentityFormField";
 
-export const IdentityFormPart = (field: IRegisterFormField) => (
+export const IdentityFormPart = (field: IIdentityFormField) => (
     <div className="form-floating mb-3">
         <input
             onChange={field.fieldElements.onchange}

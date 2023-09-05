@@ -1,6 +1,5 @@
-import React, {useState} from "react";
 import {ISignInProps} from "./ISignInProps";
-import {IdentityFormPart} from "../../admin/identity/IdentityFormPart";
+import {IdentityFormPart} from "../../../components/IdentityForm/IdentityFormPart";
 
 export const SignInFormView = (props: ISignInProps) => {
     const eventHandler = (e: React.ChangeEvent) => {props.handleChange(e.target as EventTarget & HTMLInputElement)};
