@@ -9,7 +9,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ErrorPage } from './routes/ErrorPage';
-import {Register} from "./routes/identity/Register";
 import {SignIn} from "./routes/identity/SignIn";
 import {Privacy} from "./routes/Privacy";
 import {Books} from "./routes/admin/library/Books";
@@ -24,15 +23,15 @@ import {Users} from "./routes/admin/users/Users";
 
 const router = createBrowserRouter([
     {
-        path: "/logi-sisse",
-        element: <SignIn />,
-        errorElement: <ErrorPage />
-    },
-    {
         path: "/",
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
+            {
+                path: "/logi-sisse",
+                element: <SignIn />,
+                errorElement: <ErrorPage />
+            },
             {
                 path: "/logi-valja",
                 element: <SignOut />,

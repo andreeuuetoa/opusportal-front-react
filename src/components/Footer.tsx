@@ -1,10 +1,4 @@
-import React, {useContext} from 'react';
-import {Link} from "react-router-dom";
-import {JWTContext} from "../routes/Root";
-
 export const Footer = () => {
-    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
-
     return (
         <footer>
             <nav className="footer bg-black">

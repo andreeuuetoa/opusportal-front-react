@@ -1,7 +1,7 @@
 import {Header} from "../components/Header";
 import {Footer} from "../components/Footer";
 import {Outlet, useNavigate} from "react-router-dom";
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import {IJWTResponse} from "../DTO/IJWTResponse";
 
 export const JWTContext = createContext<{
@@ -13,19 +13,32 @@ export const Root = () => {
     const [JWTResponse, setJWTResponse] = useState(null as IJWTResponse | null);
     const navigate = useNavigate();
 
-    if (JWTResponse === null) {
-        navigate("/logi-sisse");
-    }
+    let rootDiv =
+        <div className="container">
+            <main role="main" className="pb-3">
+                <Outlet />
+            </main>
+        </div>
+
+    useEffect(() => {
+        rootDiv =
+            <>
+                <Header/>
+                <div className="container">
+                    <main role="main" className="pb-3">
+                        <Outlet />
+                    </main>
+                </div>
+                <Footer/>
+            </>
+        if (JWTResponse === null) {
+            navigate("/logi-sisse");
+        }
+    });
 
     return (
         <JWTContext.Provider value={{JWTResponse, setJWTResponse}}>
-            <Header/>
-            <div className="container">
-                <main role="main" className="pb-3">
-                    <Outlet />
-                </main>
-            </div>
-            <Footer/>
+            {rootDiv}
         </JWTContext.Provider>
     );
 }
