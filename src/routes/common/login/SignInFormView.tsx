@@ -1,13 +1,19 @@
 import {ISignInProps} from "./ISignInProps";
 import {IdentityFormPart} from "../../../components/IdentityForm/IdentityFormPart";
+import {Link} from "react-router-dom";
+import React from "react";
 
 export const SignInFormView = (props: ISignInProps) => {
     const eventHandler = (e: React.ChangeEvent) => {props.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return (
-        <div className="container signin-form">
+        <div className="container sign-in-page">
+            <div className="sign-in-header">
+                <img src="assets/logo/logo-en-black.svg" alt="OpusPortal Estonian logo"/>
+                <br/>
+                <i>OpusPortal</i>
+            </div>
             <form id="loginForm" method="post" action="/Identity/Account/Login">
-                <h2>Log in.</h2>
                 <hr/>
 
                 <ul style={{'display': props.validationErrors.length === 0 ? 'none' : ''}}>
@@ -34,10 +40,14 @@ export const SignInFormView = (props: ISignInProps) => {
                 }} />
                 <button
                     onClick={(e) => props.onSubmit(e)}
-                    id="registerSubmit" className="w-100 btn btn-lg btn-primary">
+                    id="registerSubmit" className="btn btn-lg sign-in-btn">
                     Sign in
                 </button>
             </form>
+            <br/>
+                <Link to="/about">
+                    <button className="btn btn-lg about-btn">Teave</button>
+                </Link>
         </div>
     );
 }

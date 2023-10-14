@@ -16,7 +16,7 @@ export const Root = () => {
     let rootDiv =
         <div className="container">
             <main role="main" className="pb-3">
-                <Outlet />
+                <Outlet/>
             </main>
         </div>
 
@@ -26,14 +26,14 @@ export const Root = () => {
                 <Header/>
                 <div className="container">
                     <main role="main" className="pb-3">
-                        <Outlet />
+                        <Outlet/>
                     </main>
                 </div>
                 <Footer/>
             </>
-        if (JWTResponse === null) {
-            navigate("/logi-sisse");
-        }
+        // if (JWTResponse === null) {
+        //     navigate("/logi-sisse");
+        // }
     });
 
     return (

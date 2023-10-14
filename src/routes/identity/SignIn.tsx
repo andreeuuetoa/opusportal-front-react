@@ -3,7 +3,7 @@ import {ISignInData} from "../../DTO/ISignInData";
 import {SignInFormView} from "../common/login/SignInFormView";
 import {JWTContext} from "../Root";
 import {IdentityService} from "../../services/IdentityService";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export const SignIn = () => {
     const navigate = useNavigate();
@@ -54,7 +54,9 @@ export const SignIn = () => {
     };
 
     return (
-        <SignInFormView values={values} handleChange={handleChange} onSubmit={onSubmit}
-                        validationErrors={validationErrors}/>
+        <div className="container">
+            <SignInFormView values={values} handleChange={handleChange} onSubmit={onSubmit}
+                            validationErrors={validationErrors}/>
+        </div>
     );
 }

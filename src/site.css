@@ -9,7 +9,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem;
 }
 
 html {
@@ -32,10 +32,21 @@ a {
     color: #0077cc;
 }
 
-.btn-primary {
+.sign-in-btn {
+    color: #000;
+    width: 50%;
+    border: 2px solid #ccb955;
+    --bs-btn-hover-border-color: #988b3e;
+}
+
+.about-btn {
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    width: 50%;
+    border: 2px solid #ccb955;
+    background-color: #ccb955;
+    --bs-btn-hover-border-color: #988b3e;
+    --bs-btn-hover-bg: #ccb955;
+    --bs-btn-hover-color: #ffffff;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -72,7 +83,12 @@ button.accept-policy {
     display: block;
 }
 
-.signin-form {
+.sign-in-header {
+    text-align: center;
+    font-size: 35px;
+}
+
+.sign-in-page {
     max-width: 500px;
     top: 50%;
     left: 50%;
