@@ -3,11 +3,11 @@ import {IIdentityFormField} from "./IIdentityFormField";
 export const IdentityFormPart = (field: IIdentityFormField) => (
     <div className="form-floating mb-3">
         <input
+            className="form-control form-input"
+            aria-required="true"
             onChange={field.fieldElements.onchange}
             value={field.fieldElements.value}
-            className="form-control"
             autoComplete={field.fieldElements.autocomplete}
-            aria-required="true"
             type={field.fieldElements.type}
             id={"input_" + field.fieldElements.name}
             name={field.fieldElements.name}

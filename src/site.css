@@ -82,6 +82,11 @@ a {
     right: 0;
 }
 
+.form-input {
+    background-color: inherit;
+    border: 2px solid #ccb955;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
