@@ -2,12 +2,16 @@ import {Link} from "react-router-dom";
 
 export const About = () => {
     return (
-        <div className="container">
-            <div>
-                OpusPortal
-                <Link to="/logi-sisse">
-                    <button className="btn btn-lg btn-secondary">Tagasi</button>
-                </Link>
+        <div className="container about-page">
+            <div id="about-header">
+                <div id="about-header-element">
+                    <i>OpusPortal</i>
+                </div>
+                <div id="about-header-element">
+                    <Link to="/logi-sisse">
+                        <button id="back-to-about-btn" className="btn btn-lg">Tagasi</button>
+                    </Link>
+                </div>
             </div>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint
@@ -20,7 +24,7 @@ export const About = () => {
                 <br/><br/>
                 Fons codicis sub MIT licentia dimittitur et publice in GitHub praesto est.
             </p>
-            <a target="_blank" href="https://www.github.com/andreeuuetoa/opusportal-front-react">GitHub</a>
+            <a id="about-link" target="_blank" href="https://www.github.com/andreeuuetoa/opusportal-front-react">GitHub</a>
         </div>
     );
 }

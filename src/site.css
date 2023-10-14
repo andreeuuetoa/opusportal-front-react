@@ -39,6 +39,25 @@ a {
     --bs-btn-hover-border-color: #988b3e;
 }
 
+.about-page {
+    max-width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#about-header {
+    text-align: center;
+    font-size: 35px;
+}
+
+#about-header-element {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px;
+}
+
 .about-btn {
     color: #fff;
     width: 50%;
@@ -47,6 +66,20 @@ a {
     --bs-btn-hover-border-color: #988b3e;
     --bs-btn-hover-bg: #ccb955;
     --bs-btn-hover-color: #ffffff;
+}
+
+#back-to-about-btn {
+    color: #fff;
+    border: 2px solid #ccb955;
+    background-color: #ccb955;
+    --bs-btn-hover-border-color: #988b3e;
+    --bs-btn-hover-bg: #ccb955;
+    --bs-btn-hover-color: #ffffff;
+}
+
+#about-link {
+    position: absolute;
+    right: 0;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
