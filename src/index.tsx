@@ -21,6 +21,7 @@ import {Concerts} from "./routes/admin/concerts/Concerts";
 import {Competitions} from "./routes/admin/competitions/Competitions";
 import {Users} from "./routes/admin/users/Users";
 import {About} from "./routes/common/About";
+import {AccountSettings} from "./routes/common/AccountSettings";
 
 const router = createBrowserRouter([
     {
@@ -81,6 +82,11 @@ const router = createBrowserRouter([
             {
                 path: "/kasutajad",
                 element: <Users/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/settings",
+                element: <AccountSettings/>,
                 errorElement: <ErrorPage/>
             }
         ]
