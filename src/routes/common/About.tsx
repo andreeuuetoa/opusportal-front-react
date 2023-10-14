@@ -13,11 +13,11 @@ export const About = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint
                 commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit
                 fugiat iusto fuga praesentium optio, eaque rerum!
-
+                <br/><br/>
                 Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias
                 architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
                 tenetur error, harum nesciunt ipsum debitis quas aliquid.
-
+                <br/><br/>
                 Fons codicis sub MIT licentia dimittitur et publice in GitHub praesto est.
             </p>
             <a target="_blank" href="https://www.github.com/andreeuuetoa/opusportal-front-react">GitHub</a>
