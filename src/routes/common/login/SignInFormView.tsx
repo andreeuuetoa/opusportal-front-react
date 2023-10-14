@@ -25,7 +25,7 @@ export const SignInFormView = (props: ISignInProps) => {
                 <IdentityFormPart fieldElements={{
                     value: props.values.email,
                     type: "email",
-                    placeholder: "Email",
+                    placeholder: "Kasutajatunnus",
                     autocomplete: "username",
                     name: "email",
                     onchange: eventHandler
@@ -33,7 +33,7 @@ export const SignInFormView = (props: ISignInProps) => {
                 <IdentityFormPart fieldElements={{
                     value: props.values.password,
                     type: "password",
-                    placeholder: "Password",
+                    placeholder: "Salasõna",
                     autocomplete: "new-password",
                     name: "password",
                     onchange: eventHandler
@@ -41,7 +41,7 @@ export const SignInFormView = (props: ISignInProps) => {
                 <button
                     onClick={(e) => props.onSubmit(e)}
                     id="registerSubmit" className="btn btn-lg sign-in-btn">
-                    Sign in
+                    Logi sisse
                 </button>
             </form>
             <br/>
