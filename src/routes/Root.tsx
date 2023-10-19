@@ -31,11 +31,7 @@ export const Root = () => {
                 </div>
                 <Footer/>
             </>
-        // Uncomment when the JWT implementation is working properly!
-        // if (JWTResponse === null) {
-        //     navigate("/logi-sisse");
-        // }
-    });
+   });
 
     return (
         <JWTContext.Provider value={{JWTResponse, setJWTResponse}}>
