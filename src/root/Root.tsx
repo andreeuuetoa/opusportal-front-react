@@ -1,8 +1,8 @@
-import {Header} from "../components/Header";
-import {Footer} from "../components/Footer";
+import {Header} from "../common/components/Header";
+import {Footer} from "../common/components/Footer";
 import {Outlet, useNavigate} from "react-router-dom";
 import {createContext, useEffect, useState} from "react";
-import {IJWTResponse} from "../DTO/IJWTResponse";
+import {IJWTResponse} from "../identity/DTO/IJWTResponse";
 
 export const JWTContext = createContext<{
     JWTResponse: IJWTResponse | null,

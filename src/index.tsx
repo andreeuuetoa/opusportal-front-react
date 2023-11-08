@@ -8,20 +8,20 @@ import './site.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {ErrorPage} from './routes/ErrorPage';
-import {SignIn} from "./routes/identity/SignIn";
-import {Privacy} from "./routes/Privacy";
-import {Books} from "./routes/admin/library/Books";
-import {SignOut} from './routes/identity/SignOut';
-import {AdminDashboard} from "./routes/admin/AdminDashboard";
-import {BookForm} from "./routes/admin/library/BookForm";
-import {Dashboard} from "./routes/user/Dashboard";
-import {Root} from "./routes/Root";
-import {Concerts} from "./routes/admin/concerts/Concerts";
-import {Competitions} from "./routes/admin/competitions/Competitions";
-import {Users} from "./routes/admin/users/Users";
-import {About} from "./routes/common/About";
-import {AccountSettings} from "./routes/common/AccountSettings";
+import {ErrorPage} from './common/routes/ErrorPage';
+import {SignIn} from "./identity/routes/signin/SignIn";
+import {Privacy} from "./common/routes/Privacy";
+import {Books} from "./library/routes/Books";
+import {SignOut} from './identity/routes/SignOut';
+import {AdminDashboard} from "./dashboard/AdminDashboard";
+import {BookForm} from "./library/routes/BookForm";
+import {Dashboard} from "./dashboard/Dashboard";
+import {Root} from "./root/Root";
+import {Concerts} from "./concerts/Concerts";
+import {Competitions} from "./competitions/Competitions";
+import {Users} from "./dashboard/Users";
+import {About} from "./common/routes/About";
+import {AccountSettings} from "./identity/routes/AccountSettings";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/about",
+                path: "/teave",
                 element: <About/>,
                 errorElement: <ErrorPage/>
             },
@@ -60,12 +60,12 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/raamatud/:id?",
+                path: "/raamatud",
                 element: <Books/>,
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/sisesta-raamat",
+                path: "/lisa-raamat",
                 element: <BookForm/>,
                 errorElement: <ErrorPage/>
             },
@@ -85,7 +85,7 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/settings",
+                path: "/kasutaja-satted",
                 element: <AccountSettings/>,
                 errorElement: <ErrorPage/>
             }

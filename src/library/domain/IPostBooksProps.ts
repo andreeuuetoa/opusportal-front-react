@@ -1,5 +1,5 @@
 import React from "react";
-import {IBook} from "../../domain/contracts/library/IBook";
+import {IBook} from "../DTO/IBook";
 
 export interface IPostBooksProps {
     bookData: IBook;

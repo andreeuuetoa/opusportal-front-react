@@ -1,8 +1,8 @@
-import {RegisterFormView} from "../../../components/register/RegisterFormView";
+import {RegisterFormView} from "../../components/register/RegisterFormView";
 import React, {useContext, useState} from "react";
-import {IRegisterData} from "../../../DTO/IRegisterData";
-import {IdentityService} from "../../../services/IdentityService";
-import {JWTContext} from "../../Root";
+import {IRegisterData} from "../../DTO/IRegisterData";
+import {IdentityService} from "../../services/IdentityService";
+import {JWTContext} from "../../../root/Root";
 
 export const Register = () => {
     const [values, setValues] = useState({

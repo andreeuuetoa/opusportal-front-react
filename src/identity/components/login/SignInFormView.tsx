@@ -13,7 +13,7 @@ export const SignInFormView = (props: ISignInProps) => {
                 <br/>
                 <i>OpusPortal</i>
             </div>
-            <form id="loginForm" method="post" action="/Identity/Account/Login">
+            <form id="loginForm" method="post" action="/src/identity/Account/Login">
                 <hr/>
 
                 <ul style={{'display': props.validationErrors.length === 0 ? 'none' : ''}}>

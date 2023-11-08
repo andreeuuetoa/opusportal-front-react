@@ -32,7 +32,7 @@ a {
     color: #0077cc;
 }
 
-.sign-in-btn {
+.submit-btn {
     color: #000;
     width: 50%;
     border: 2px solid #ccb955;
@@ -132,6 +132,10 @@ button.accept-policy {
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
+}
+
+.account-settings-page {
+    max-width: 800px;
 }
 
 .table-row {

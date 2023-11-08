@@ -1,8 +1,8 @@
 import {BaseService} from "./BaseService";
 import {IBaseEntity} from "../domain/contracts/IBaseEntity";
 import {AxiosError} from "axios";
-import {IdentityService} from "./IdentityService";
-import {IJWTResponse} from "../DTO/IJWTResponse";
+import {IdentityService} from "../../identity/services/IdentityService";
+import {IJWTResponse} from "../../identity/DTO/IJWTResponse";
 
 export abstract class BaseEntityService<TEntity extends IBaseEntity> extends BaseService {
     protected constructor(baseURL: string, private setJwtResponse: ((data: IJWTResponse | null) => void)) {

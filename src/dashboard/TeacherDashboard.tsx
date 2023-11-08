@@ -1,5 +1,5 @@
 import {StudentsPerformances} from "../concerts/StudentsPerformances";
-import {YourBooksLentOut} from "../library/YourBooksLentOut";
+import {YourBooksLentOut} from "../library/components/YourBooksLentOut";
 import {YourStudents} from "./YourStudents";
 import {Contacts} from "./Contacts";
 

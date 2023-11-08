@@ -1,4 +1,4 @@
-import {IGetBooksProps} from "./IGetBooksProps";
+import {IGetBooksProps} from "../domain/IGetBooksProps";
 import {BooksTableRow} from "./BooksTableRow";
 
 export const BooksTable = (books: IGetBooksProps) => {

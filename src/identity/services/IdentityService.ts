@@ -1,4 +1,4 @@
-import {BaseService} from "./BaseService";
+import {BaseService} from "../../common/services/BaseService";
 import {IJWTResponse} from "../DTO/IJWTResponse";
 import {IRegisterData} from "../DTO/IRegisterData";
 import {ISignInData} from "../DTO/ISignInData";

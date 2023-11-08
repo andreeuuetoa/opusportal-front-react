@@ -1,5 +1,5 @@
-import {IBook} from "../contracts/library/IBook";
-import {BaseEntity} from "../BaseEntity";
+import {IBook} from "./IBook";
+import {BaseEntity} from "../../common/domain/BaseEntity";
 
 export class Book extends BaseEntity implements IBook {
     name: string;

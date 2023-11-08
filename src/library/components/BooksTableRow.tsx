@@ -1,4 +1,4 @@
-import {IBook} from "../../domain/contracts/library/IBook";
+import {IBook} from "../DTO/IBook";
 
 export const BooksTableRow = (book: IBook) => {
     return (

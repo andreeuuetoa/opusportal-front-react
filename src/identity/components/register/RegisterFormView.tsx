@@ -6,7 +6,7 @@ export const RegisterFormView = (props: IRegisterProps) => {
     const eventHandler = (e: React.ChangeEvent) => {props.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return (
-        <form id="registerForm" method="post" action="/Identity/Account/Register">
+        <form id="registerForm" method="post" action="/src/identity/Account/Register">
             <h2>Create a new account.</h2>
             <hr/>
 
