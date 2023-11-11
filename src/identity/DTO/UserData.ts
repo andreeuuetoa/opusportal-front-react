@@ -1,4 +1,4 @@
-export interface IRegisterData {
+export interface UserData {
     email: string,
     password: string,
     confirmPassword: string,

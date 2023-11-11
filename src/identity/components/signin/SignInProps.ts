@@ -1,8 +1,8 @@
 import React from "react";
-import {ISignInData} from "../../DTO/ISignInData";
+import {SignInData} from "../../DTO/SignInData";
 
-export interface ISignInProps {
-    values: ISignInData;
+export interface SignInProps {
+    values: SignInData;
 
     handleChange: (target:
                        EventTarget & HTMLInputElement) => void;

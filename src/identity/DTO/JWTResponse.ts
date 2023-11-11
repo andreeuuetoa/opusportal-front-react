@@ -1,4 +1,4 @@
-export interface IJWTResponse {
+export interface JWTResponse {
     JWT: string;
     refreshToken: string;
     role: string;
