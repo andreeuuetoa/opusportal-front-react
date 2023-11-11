@@ -1,6 +1,6 @@
 import React, {useContext, useState} from "react";
 import {IBook} from "../DTO/IBook";
-import {AddBookView} from "../components/AddBookView";
+import {AddBookView} from "../views/AddBookView";
 import {JWTContext} from "../../root/Root";
 
 export const AddBook = () => {

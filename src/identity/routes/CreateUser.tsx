@@ -1,8 +1,8 @@
-import {CreateUserView} from "../../views/CreateUserView";
+import {CreateUserView} from "../views/CreateUserView";
 import React, {useContext, useState} from "react";
-import {UserData} from "../../DTO/UserData";
-import {IdentityService} from "../../services/IdentityService";
-import {JWTContext} from "../../../root/Root";
+import {UserData} from "../DTO/UserData";
+import {IdentityService} from "../services/IdentityService";
+import {JWTContext} from "../../root/Root";
 
 export const CreateUser = () => {
     const [values, setValues] = useState({

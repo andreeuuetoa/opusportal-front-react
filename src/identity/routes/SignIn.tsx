@@ -1,8 +1,8 @@
 import React, {useContext, useState} from "react";
-import {SignInData} from "../../DTO/SignInData";
-import {SignInFormView} from "../../views/SignInFormView";
-import {JWTContext} from "../../../root/Root";
-import {IdentityService} from "../../services/IdentityService";
+import {SignInData} from "../DTO/SignInData";
+import {SignInFormView} from "../views/SignInFormView";
+import {JWTContext} from "../../root/Root";
+import {IdentityService} from "../services/IdentityService";
 import {Link, useNavigate} from "react-router-dom";
 
 export const SignIn = () => {
