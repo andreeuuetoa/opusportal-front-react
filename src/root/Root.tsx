@@ -1,5 +1,5 @@
-import {Header} from "../common/components/Header";
-import {Footer} from "../common/components/Footer";
+import {Header} from "../common/viewparts/Header";
+import {Footer} from "../common/viewparts/Footer";
 import {Outlet, useNavigate} from "react-router-dom";
 import {createContext, useEffect, useState} from "react";
 import {JWTResponse} from "../identity/DTO/JWTResponse";

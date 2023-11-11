@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {IPostBooksProps} from "../domain/IPostBooksProps";
-import {FormPart} from "../../common/components/form/FormPart";
+import {FormPart} from "../../common/viewparts/FormPart";
 
 export const AddBookView = (props: IPostBooksProps) => {
     const eventHandler = (e: React.ChangeEvent) => {props.handleChange(e.target as EventTarget & HTMLInputElement)};

@@ -1,5 +1,5 @@
 import {UserProps} from "../components/register/UserProps";
-import {FormPart} from "../../common/components/form/FormPart";
+import {FormPart} from "../../common/viewparts/FormPart";
 import React from "react";
 import {EmailValues} from "../components/register/EmailValues";
 import {PasswordValues} from "../components/register/PasswordValues";

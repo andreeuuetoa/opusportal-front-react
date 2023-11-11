@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router-dom";
-import {Header} from "../components/Header";
-import {Footer} from "../components/Footer";
+import {Header} from "../viewparts/Header";
+import {Footer} from "../viewparts/Footer";
 
 interface IError {
     statusText?: string,

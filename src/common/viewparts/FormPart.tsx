@@ -1,4 +1,4 @@
-import {FormField} from "./FormField";
+import {FormField} from "../components/form/FormField";
 
 export const FormPart = (field: FormField) => (
     <div className="form-floating mb-3">

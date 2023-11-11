@@ -1,5 +1,5 @@
 import {SignInProps} from "../components/signin/SignInProps";
-import {FormPart} from "../../common/components/form/FormPart";
+import {FormPart} from "../../common/viewparts/FormPart";
 import {Link} from "react-router-dom";
 import React from "react";
 import {EmailValues} from "../components/signin/EmailValues";
