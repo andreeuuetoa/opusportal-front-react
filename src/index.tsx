@@ -22,6 +22,7 @@ import {Competitions} from "./competitions/Competitions";
 import {Users} from "./dashboard/Users";
 import {About} from "./common/routes/About";
 import {AccountSettings} from "./identity/routes/AccountSettings";
+import {CreateUser} from "./identity/routes/adduser/CreateUser";
 
 const router = createBrowserRouter([
     {
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
             {
                 path: "/kasutajad",
                 element: <Users/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/lisa-kasutaja",
+                element: <CreateUser/>,
                 errorElement: <ErrorPage/>
             },
             {

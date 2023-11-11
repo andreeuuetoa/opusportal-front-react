@@ -1,10 +1,10 @@
-import {AddUserView} from "../../components/register/AddUserView";
+import {CreateUserView} from "../../views/CreateUserView";
 import React, {useContext, useState} from "react";
-import {IRegisterData} from "../../DTO/IRegisterData";
+import {UserData} from "../../DTO/UserData";
 import {IdentityService} from "../../services/IdentityService";
 import {JWTContext} from "../../../root/Root";
 
-export const AddUser = () => {
+export const CreateUser = () => {
     const [values, setValues] = useState({
         email: "",
         password: "",
@@ -12,7 +12,7 @@ export const AddUser = () => {
         firstName: "",
         lastName: "",
         roleName: ""
-    } as IRegisterData);
+    } as UserData);
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
@@ -54,6 +54,6 @@ export const AddUser = () => {
     };
 
     return (
-        <AddUserView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <CreateUserView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
     );
 }

@@ -8,7 +8,7 @@ import {FirstNameValues} from "../components/register/FirstNameValues";
 import {LastNameValues} from "../components/register/LastNameValues";
 import {RoleValues} from "../components/register/RoleValues";
 
-export const AddUserView = (userProps: UserProps) => {
+export const CreateUserView = (userProps: UserProps) => {
     const emailValues = EmailValues(userProps);
     const passwordValues = PasswordValues(userProps);
     const confirmPasswordValues = ConfirmPasswordValues(userProps);
