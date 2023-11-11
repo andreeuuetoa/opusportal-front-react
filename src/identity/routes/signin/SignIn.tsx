@@ -1,6 +1,7 @@
 import React, {useContext, useState} from "react";
 import {ISignInData} from "../../DTO/ISignInData";
 import {SignInFormView} from "../../components/login/SignInFormView";
+import {SignInData} from "../../DTO/SignInData";
 import {JWTContext} from "../../../root/Root";
 import {IdentityService} from "../../services/IdentityService";
 import {Link, useNavigate} from "react-router-dom";
@@ -11,7 +12,7 @@ export const SignIn = () => {
     const [values, setValues] = useState({
         email: "",
         password: ""
-    } as ISignInData);
+    } as SignInData);
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
