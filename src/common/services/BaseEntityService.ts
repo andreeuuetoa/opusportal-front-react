@@ -2,14 +2,14 @@ import {BaseService} from "./BaseService";
 import {IBaseEntity} from "../domain/contracts/IBaseEntity";
 import {AxiosError} from "axios";
 import {IdentityService} from "../../identity/services/IdentityService";
-import {IJWTResponse} from "../../identity/DTO/IJWTResponse";
+import {JWTResponse} from "../../identity/DTO/JWTResponse";
 
 export abstract class BaseEntityService<TEntity extends IBaseEntity> extends BaseService {
-    protected constructor(baseURL: string, private setJwtResponse: ((data: IJWTResponse | null) => void)) {
+    protected constructor(baseURL: string, private setJwtResponse: ((data: JWTResponse | null) => void)) {
         super(baseURL);
     }
 
-    async getAll(JWT: IJWTResponse): Promise<TEntity[] | undefined> {
+    async getAll(JWT: JWTResponse): Promise<TEntity[] | undefined> {
         try {
             const [response] = await Promise.all([this.axios.get<TEntity[] | undefined>('', {
                 headers: {

@@ -1,16 +1,16 @@
 import {BaseService} from "../../common/services/BaseService";
-import {IJWTResponse} from "../DTO/IJWTResponse";
-import {IRegisterData} from "../DTO/IRegisterData";
-import {ISignInData} from "../DTO/ISignInData";
+import {JWTResponse} from "../DTO/JWTResponse";
+import {UserData} from "../DTO/UserData";
+import {SignInData} from "../DTO/SignInData";
 
 export class IdentityService extends BaseService {
     constructor() {
         super('Identity/Account/');
     }
 
-    async register(data: IRegisterData): Promise<IJWTResponse | undefined> {
+    async register(data: UserData): Promise<JWTResponse | undefined> {
         try {
-            const response = await this.axios.post<IJWTResponse>('Register', data);
+            const response = await this.axios.post<JWTResponse>('Register', data);
 
             console.log('Register response: ', response);
             if (response.status === 200) {
@@ -23,9 +23,9 @@ export class IdentityService extends BaseService {
         }
     }
 
-    async signIn(data: ISignInData): Promise<IJWTResponse | undefined> {
+    async signIn(data: SignInData): Promise<JWTResponse | undefined> {
         try {
-            const response = await this.axios.post<IJWTResponse>('SignIn', data);
+            const response = await this.axios.post<JWTResponse>('SignIn', data);
 
             console.log('Sign-in response: ', response);
             if (response.status === 200) {
@@ -38,7 +38,7 @@ export class IdentityService extends BaseService {
         }
     }
 
-    async signOut(JWTdata: IJWTResponse) {
+    async signOut(JWTdata: JWTResponse) {
         try {
             const response = await this.axios.post(
                 'SignOut',
@@ -61,11 +61,11 @@ export class IdentityService extends BaseService {
         }
     }
 
-    async refreshToken(JWT: IJWTResponse) {
+    async refreshToken(JWT: JWTResponse) {
         console.log(JWT);
 
         try {
-            const refreshTokenResponse = await this.axios.post<IJWTResponse>(
+            const refreshTokenResponse = await this.axios.post<JWTResponse>(
                 'refreshToken',
                 JWT
             );
