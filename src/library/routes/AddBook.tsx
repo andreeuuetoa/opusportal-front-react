@@ -1,10 +1,9 @@
 import React, {useContext, useState} from "react";
 import {IBook} from "../DTO/IBook";
-import {BookFormView} from "../components/BookFormView";
-import {BookService} from "../services/BookService";
+import {AddBookView} from "../components/AddBookView";
 import {JWTContext} from "../../root/Root";
 
-export const BookForm = () => {
+export const AddBook = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const [values, setValues] = useState({
@@ -24,6 +23,6 @@ export const BookForm = () => {
     };
 
     return (
-        <BookFormView bookData={values} onSubmit={onSubmit} handleChange={handleChange} validationErrors={validationErrors}/>
+        <AddBookView bookData={values} onSubmit={onSubmit} handleChange={handleChange} validationErrors={validationErrors}/>
     );
 }

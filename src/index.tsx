@@ -14,7 +14,7 @@ import {Privacy} from "./common/routes/Privacy";
 import {Books} from "./library/routes/Books";
 import {SignOut} from './identity/routes/SignOut';
 import {AdminDashboard} from "./dashboard/AdminDashboard";
-import {BookForm} from "./library/routes/BookForm";
+import {AddBook} from "./library/routes/AddBook";
 import {Dashboard} from "./dashboard/Dashboard";
 import {Root} from "./root/Root";
 import {Concerts} from "./concerts/Concerts";
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/lisa-raamat",
-                element: <BookForm/>,
+                element: <AddBook/>,
                 errorElement: <ErrorPage/>
             },
             {
