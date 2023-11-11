@@ -2,12 +2,12 @@ import {IRegisterProps} from "./IRegisterProps";
 import {IdentityFormPart} from "../identityform/IdentityFormPart";
 import React from "react";
 
-export const RegisterFormView = (props: IRegisterProps) => {
+export const AddUserView = (props: IRegisterProps) => {
     const eventHandler = (e: React.ChangeEvent) => {props.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return (
         <form id="registerForm" method="post" action="/src/identity/Account/Register">
-            <h2>Create a new account.</h2>
+            <h2>Loo uus kasutaja.</h2>
             <hr/>
 
             <ul style={{'display': props.validationErrors.length === 0 ? 'none' : ''}}>

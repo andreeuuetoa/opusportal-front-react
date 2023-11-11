@@ -1,10 +1,10 @@
-import {RegisterFormView} from "../../components/register/RegisterFormView";
+import {AddUserView} from "../../components/register/AddUserView";
 import React, {useContext, useState} from "react";
 import {IRegisterData} from "../../DTO/IRegisterData";
 import {IdentityService} from "../../services/IdentityService";
 import {JWTContext} from "../../../root/Root";
 
-export const Register = () => {
+export const AddUser = () => {
     const [values, setValues] = useState({
         email: "",
         password: "",
@@ -54,6 +54,6 @@ export const Register = () => {
     };
 
     return (
-        <RegisterFormView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <AddUserView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
     );
 }
