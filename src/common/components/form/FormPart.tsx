@@ -1,6 +1,6 @@
-import {IIdentityFormField} from "./IIdentityFormField";
+import {FormField} from "./FormField";
 
-export const IdentityFormPart = (field: IIdentityFormField) => (
+export const FormPart = (field: FormField) => (
     <div className="form-floating mb-3">
         <input
             className="form-control form-input"

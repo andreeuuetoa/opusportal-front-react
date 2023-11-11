@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface IIdentityFormField {
+export interface FormField {
     fieldElements: {
         value: string,
         type: string,
