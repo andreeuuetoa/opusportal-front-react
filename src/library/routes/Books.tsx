@@ -20,7 +20,7 @@ export const Books = () => {
                     if (response) {
                         setData(response);
                     } else {
-                        // TODO: Delete JWT and redirect to login page
+                        // TODO: Delete JWT and redirect to sign-in page
                         setData([]);
                     }
                 }
