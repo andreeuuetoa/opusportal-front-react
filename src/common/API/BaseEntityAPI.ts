@@ -1,7 +1,7 @@
 import {BaseAPI} from "./BaseAPI";
 import {IBaseEntity} from "../domain/contracts/IBaseEntity";
 import {AxiosError} from "axios";
-import {IdentityAPI} from "../../identity/services/IdentityAPI";
+import {IdentityAPI} from "../../identity/API/IdentityAPI";
 import {JWTResponse} from "../../identity/DTO/JWTResponse";
 
 export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI {

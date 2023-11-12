@@ -1,4 +1,4 @@
-import {BaseEntityAPI} from "../../common/services/BaseEntityAPI";
+import {BaseEntityAPI} from "../../common/API/BaseEntityAPI";
 import {IBook} from "../DTO/IBook";
 import {JWTResponse} from "../../identity/DTO/JWTResponse";
 

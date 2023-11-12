@@ -1,4 +1,4 @@
-import {BaseAPI} from "../../common/services/BaseAPI";
+import {BaseAPI} from "../../common/API/BaseAPI";
 import {JWTResponse} from "../DTO/JWTResponse";
 import {UserData} from "../DTO/UserData";
 import {SignInData} from "../DTO/SignInData";

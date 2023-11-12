@@ -1,7 +1,7 @@
 import {useContext, useEffect} from "react";
 import {JWTContext} from "../../root/Root";
 import {useNavigate} from "react-router-dom";
-import {IdentityAPI} from "../services/IdentityAPI";
+import {IdentityAPI} from "../API/IdentityAPI";
 
 export const SignOut = () => {
     const { JWTResponse, setJWTResponse } = useContext(JWTContext);

@@ -1,7 +1,7 @@
 import {CreateUserView} from "../views/CreateUserView";
 import React, {useContext, useState} from "react";
 import {UserData} from "../DTO/UserData";
-import {IdentityAPI} from "../services/IdentityAPI";
+import {IdentityAPI} from "../API/IdentityAPI";
 import {JWTContext} from "../../root/Root";
 
 export const CreateUser = () => {
