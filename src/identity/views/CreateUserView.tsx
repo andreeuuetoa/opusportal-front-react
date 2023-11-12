@@ -28,24 +28,30 @@ export const CreateUserView = (userProps: UserProps) => {
                 </li>
             </ul>
 
-            <FormPart fieldElements={emailValues} />
-            <FormPart fieldElements={firstNameValues} />
-            <FormPart fieldElements={lastNameValues} />
-            <FormPart fieldElements={passwordValues} />
-            <FormPart fieldElements={confirmPasswordValues} />
             <div>
-                <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
                 <div className="float-child">
-                    <input type="radio" value="student" name="userRole" />Õpilane<br/>
-                    <input type="radio" value="teacher" name="userRole" />Õpetaja<br/>
-                    <input type="radio" value="other" name="userRole" />Muu
+                    <FormPart fieldElements={emailValues} />
+                    <FormPart fieldElements={firstNameValues} />
+                    <FormPart fieldElements={lastNameValues} />
+                    <FormPart fieldElements={passwordValues} />
+                    <FormPart fieldElements={confirmPasswordValues} />
+                    <div className="user-addition-page-roles">
+                        <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
+                        <div className="float-child">
+                            <input type="radio" value="student" name="userRole" />Õpilane<br/>
+                            <input type="radio" value="teacher" name="userRole" />Õpetaja<br/>
+                            <input type="radio" value="other" name="userRole" />Muu
+                        </div>
+                    </div>
+                </div>
+                <div className="float-child">
+                <button
+                    onClick={(e) => userProps.onSubmit(e)}
+                    id="registerSubmit" className="w-50 btn btn-lg submit-btn">
+                    Loo kasutaja
+                </button>
                 </div>
             </div>
-            <button
-                onClick={(e) => userProps.onSubmit(e)}
-                id="registerSubmit" className="w-100 btn btn-lg submit-btn">
-                Register
-            </button>
         </form>
     );
 }

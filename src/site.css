@@ -142,6 +142,10 @@ button.accept-policy {
     margin-right: 100px;
 }
 
+.user-addition-page-roles {
+    width: 66%;
+}
+
 .float-child {
     width: 50%;
     float: left;
