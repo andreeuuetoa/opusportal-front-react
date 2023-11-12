@@ -1,7 +1,7 @@
 import {Header} from "../common/viewparts/Header";
 import {Footer} from "../common/viewparts/Footer";
 import {Outlet, useNavigate} from "react-router-dom";
-import {createContext, useEffect, useState} from "react";
+import {createContext, useState} from "react";
 import {JWTResponse} from "../identity/DTO/JWTResponse";
 
 export const JWTContext = createContext<{
