@@ -1,11 +1,11 @@
-import {UserProps} from "../components/register/UserProps";
+import {UserProps} from "../components/createuser/UserProps";
 import {FormPart} from "../../common/viewparts/FormPart";
 import React from "react";
-import {EmailValues} from "../components/register/EmailValues";
-import {PasswordValues} from "../components/register/PasswordValues";
-import {ConfirmPasswordValues} from "../components/register/ConfirmPasswordValues";
-import {FirstNameValues} from "../components/register/FirstNameValues";
-import {LastNameValues} from "../components/register/LastNameValues";
+import {EmailValues} from "../components/createuser/EmailValues";
+import {PasswordValues} from "../components/createuser/PasswordValues";
+import {ConfirmPasswordValues} from "../components/createuser/ConfirmPasswordValues";
+import {FirstNameValues} from "../components/createuser/FirstNameValues";
+import {LastNameValues} from "../components/createuser/LastNameValues";
 
 export const CreateUserView = (userProps: UserProps) => {
     const emailValues = EmailValues(userProps);
