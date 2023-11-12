@@ -7,7 +7,7 @@ export const LastNameValues = (userProps: UserProps) => {
     return {
         value: userProps.values.lastName,
         type: "text",
-        placeholder: "Last name",
+        placeholder: "Perekonnanimi",
         autocomplete: "lastname",
         name: "lastName",
         onchange: eventHandler

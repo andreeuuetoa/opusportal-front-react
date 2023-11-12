@@ -29,14 +29,21 @@ export const CreateUserView = (userProps: UserProps) => {
             </ul>
 
             <FormPart fieldElements={emailValues} />
-            <FormPart fieldElements={passwordValues} />
-            <FormPart fieldElements={confirmPasswordValues} />
             <FormPart fieldElements={firstNameValues} />
             <FormPart fieldElements={lastNameValues} />
-            <FormPart fieldElements={roleValues} />
+            <FormPart fieldElements={passwordValues} />
+            <FormPart fieldElements={confirmPasswordValues} />
+            <div>
+                <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
+                <div className="float-child">
+                    <input type="radio" value="student" name="userRole" />Õpilane<br/>
+                    <input type="radio" value="teacher" name="userRole" />Õpetaja<br/>
+                    <input type="radio" value="other" name="userRole" />Muu
+                </div>
+            </div>
             <button
                 onClick={(e) => userProps.onSubmit(e)}
-                id="registerSubmit" className="w-100 btn btn-lg btn-primary">
+                id="registerSubmit" className="w-100 btn btn-lg submit-btn">
                 Register
             </button>
         </form>

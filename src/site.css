@@ -141,3 +141,8 @@ button.accept-policy {
 .table-row {
     margin-right: 100px;
 }
+
+.float-child {
+    width: 50%;
+    float: left;
+}

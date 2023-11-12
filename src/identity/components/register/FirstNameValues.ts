@@ -7,7 +7,7 @@ export const FirstNameValues = (userProps: UserProps) => {
     return {
         value: userProps.values.firstName,
             type: "text",
-        placeholder: "First name",
+        placeholder: "Eesnimi",
         autocomplete: "firstname",
         name: "firstName",
         onchange: eventHandler

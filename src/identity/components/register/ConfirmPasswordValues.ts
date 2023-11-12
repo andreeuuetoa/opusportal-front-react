@@ -7,7 +7,7 @@ export const ConfirmPasswordValues = (userProps: UserProps) => {
     return {
         value: userProps.values.confirmPassword,
         type: "password",
-        placeholder: "Confirm password",
+        placeholder: "Kinnita salasõna",
         autocomplete: "confirm-password",
         name: "confirmPassword",
         onchange: eventHandler
