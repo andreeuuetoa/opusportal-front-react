@@ -6,7 +6,6 @@ import {PasswordValues} from "../components/register/PasswordValues";
 import {ConfirmPasswordValues} from "../components/register/ConfirmPasswordValues";
 import {FirstNameValues} from "../components/register/FirstNameValues";
 import {LastNameValues} from "../components/register/LastNameValues";
-import {RoleValues} from "../components/register/RoleValues";
 
 export const CreateUserView = (userProps: UserProps) => {
     const emailValues = EmailValues(userProps);
@@ -14,8 +13,6 @@ export const CreateUserView = (userProps: UserProps) => {
     const confirmPasswordValues = ConfirmPasswordValues(userProps);
     const firstNameValues = FirstNameValues(userProps);
     const lastNameValues = LastNameValues(userProps);
-    // TODO: Does not get the value from the backend! Default: "Student"
-    const roleValues = RoleValues(userProps);
 
     return (
         <form id="registerForm" method="post" action="/src/identity/Account/Register">
