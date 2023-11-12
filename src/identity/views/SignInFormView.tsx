@@ -34,9 +34,9 @@ export const SignInFormView = (signInProps: SignInProps) => {
                 </button>
             </form>
             <br/>
-                <Link to="/teave">
-                    <button className="btn btn-lg about-btn">Teave</button>
-                </Link>
+            <Link to="/teave">
+                <button className="btn btn-lg about-btn">Teave</button>
+            </Link>
         </div>
     );
 }
