@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from "react";
 import {JWTContext} from "../../root/Root";
-import {BookService} from "../services/BookService";
+import {BookAPI} from "../services/BookAPI";
 import {IBook} from "../DTO/IBook";
 import {BooksTable} from "../viewparts/BooksTable";
 import {Link} from "react-router-dom";
@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 
 export const Books = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
-    const bookService = new BookService(setJWTResponse!);
+    const bookService = new BookAPI(setJWTResponse!);
 
     const [data, setData] = useState([] as IBook[]);
 

@@ -1,12 +1,12 @@
 import {useContext, useEffect} from "react";
 import {JWTContext} from "../../root/Root";
 import {useNavigate} from "react-router-dom";
-import {IdentityService} from "../services/IdentityService";
+import {IdentityAPI} from "../services/IdentityAPI";
 
 export const SignOut = () => {
     const { JWTResponse, setJWTResponse } = useContext(JWTContext);
     const navigate = useNavigate();
-    const identityService = new IdentityService();
+    const identityService = new IdentityAPI();
 
     useEffect(() => {
         if (JWTResponse)

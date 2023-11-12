@@ -1,7 +1,7 @@
 import {CreateUserView} from "../views/CreateUserView";
 import React, {useContext, useState} from "react";
 import {UserData} from "../DTO/UserData";
-import {IdentityService} from "../services/IdentityService";
+import {IdentityAPI} from "../services/IdentityAPI";
 import {JWTContext} from "../../root/Root";
 
 export const CreateUser = () => {
@@ -22,7 +22,7 @@ export const CreateUser = () => {
 
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
-    const identityService = new IdentityService();
+    const identityService = new IdentityAPI();
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();

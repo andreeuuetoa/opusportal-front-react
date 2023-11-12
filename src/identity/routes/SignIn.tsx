@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import {SignInData} from "../DTO/SignInData";
 import {SignInFormView} from "../views/SignInFormView";
 import {JWTContext} from "../../root/Root";
-import {IdentityService} from "../services/IdentityService";
+import {IdentityAPI} from "../services/IdentityAPI";
 import {Link, useNavigate} from "react-router-dom";
 
 export const SignIn = () => {
@@ -21,7 +21,7 @@ export const SignIn = () => {
 
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
-    const identityService = new IdentityService();
+    const identityService = new IdentityAPI();
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();

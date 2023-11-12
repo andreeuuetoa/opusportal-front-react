@@ -1,9 +1,9 @@
-import {BaseService} from "../../common/services/BaseService";
+import {BaseAPI} from "../../common/services/BaseAPI";
 import {JWTResponse} from "../DTO/JWTResponse";
 import {UserData} from "../DTO/UserData";
 import {SignInData} from "../DTO/SignInData";
 
-export class IdentityService extends BaseService {
+export class IdentityAPI extends BaseAPI {
     constructor() {
         super('Identity/Account/');
     }

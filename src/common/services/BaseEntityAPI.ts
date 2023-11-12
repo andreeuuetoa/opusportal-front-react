@@ -1,10 +1,10 @@
-import {BaseService} from "./BaseService";
+import {BaseAPI} from "./BaseAPI";
 import {IBaseEntity} from "../domain/contracts/IBaseEntity";
 import {AxiosError} from "axios";
-import {IdentityService} from "../../identity/services/IdentityService";
+import {IdentityAPI} from "../../identity/services/IdentityAPI";
 import {JWTResponse} from "../../identity/DTO/JWTResponse";
 
-export abstract class BaseEntityService<TEntity extends IBaseEntity> extends BaseService {
+export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI {
     protected constructor(baseURL: string, private setJwtResponse: ((data: JWTResponse | null) => void)) {
         super(baseURL);
     }
@@ -28,7 +28,7 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
             return undefined;
         } catch (error) {
             if ((error as AxiosError).response?.status === 401) {
-                let identityService = new IdentityService();
+                let identityService = new IdentityAPI();
                 let refreshedJWT = await identityService.refreshToken(JWT);
 
                 if (refreshedJWT) {
