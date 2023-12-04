@@ -1,6 +1,5 @@
 import {CreateConcertView} from "../views/CreateConcertView";
 import React, {useContext, useState} from "react";
-import {UserData} from "../../identity/DTO/UserData";
 import {JWTContext} from "../../root/Root";
 import {IdentityAPI} from "../../identity/API/IdentityAPI";
 import {ConcertData} from "../DTO/ConcertData";

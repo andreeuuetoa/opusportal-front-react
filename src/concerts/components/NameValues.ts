@@ -1,6 +1,5 @@
 import {ConcertProps} from "./ConcertProps";
 import React from "react";
-import {UserData} from "../../identity/DTO/UserData";
 
 export const NameValues = (concertProps: ConcertProps) => {
 
