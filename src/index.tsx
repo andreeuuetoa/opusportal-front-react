@@ -23,6 +23,7 @@ import {Users} from "./identity/routes/Users";
 import {About} from "./common/routes/About";
 import {AccountSettings} from "./identity/routes/AccountSettings";
 import {CreateUser} from "./identity/routes/CreateUser";
+import {CreateConcert} from "./concerts/routes/CreateConcert";
 
 const router = createBrowserRouter([
     {
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
             {
                 path: "/kontserdid",
                 element: <Concerts/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/lisa-kontsert",
+                element: <CreateConcert/>,
                 errorElement: <ErrorPage/>
             },
             {
