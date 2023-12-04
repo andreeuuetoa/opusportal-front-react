@@ -134,6 +134,11 @@ button.accept-policy {
     position: absolute;
 }
 
+.fake-link {
+    color: blue;
+    text-decoration: underline;
+}
+
 .account-settings-page {
     max-width: 800px;
 }

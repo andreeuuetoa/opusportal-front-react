@@ -1,33 +1,51 @@
 import {useState} from "react";
+import {FormPart} from "../../common/viewparts/FormPart";
+import {CurrentPasswordValues} from "../components/accountsettings/CurrentPasswordValues";
+import {PasswordProps} from "../components/accountsettings/PasswordProps";
+import {ConfirmPasswordValues} from "../components/accountsettings/ConfirmPasswordValues";
+import {NewPasswordValues} from "../components/accountsettings/NewPasswordValues";
 
-export const AccountSettingsView = () => {
+export const AccountSettingsView = (passwordProps: PasswordProps) => {
     const [showPassword, setShowPassword] = useState(false);
 
+    const currentPasswordValues = CurrentPasswordValues(passwordProps);
+    const newPasswordValues = NewPasswordValues(passwordProps);
+    const confirmPasswordValues = ConfirmPasswordValues(passwordProps);
+
     return (
-        <div className="account-settings-page">
-            <header>Kasutaja sätted</header>
-            <form>
-                <div className="form-group">
-                    <label onClick={() => setShowPassword(true)}>Vaheta salasõna</label>
+        <form id="accountSettingsForm" method="post">
+            <h2>Kasutaja sätted</h2>
+            <div>
+                <div className="float-child">
+                    <ul style={{'display': passwordProps.validationErrors.length === 0 ? 'none' : ''}}>
+                        <li>
+                            {passwordProps.validationErrors.length > 0 ? passwordProps.validationErrors[0] : ''}
+                        </li>
+                    </ul>
+
+                    <label className="fake-link" onClick={() => setShowPassword(true)}>Vaheta salasõna</label>
+                    <br/>
                     {
                         showPassword &&
                         <>
-                            <input type="text" id="password" placeholder="Praegune salasõna"></input>
-                            <input type="text" id="password" placeholder="Uus salasõna"></input>
-                            <input type="text" id="password" placeholder="Kinnita salasõna"></input>
+                            <FormPart fieldElements={currentPasswordValues}/>
+                            <FormPart fieldElements={newPasswordValues}/>
+                            <FormPart fieldElements={confirmPasswordValues}/>
                         </>
                     }
                 </div>
-                <div>
+                <div className="float-child">
                     <label>Kontaktid:</label>
                     <input placeholder="Väärtus"/>
                     <select placeholder="Tüüp">
                         <option></option>
                     </select>
                     <p>+ Lisa kontakt</p>
+                    <button
+                        onClick={(e) => passwordProps.onSubmit(e)}
+                        id="registerSubmit" className="w-50 btn btn-lg submit-btn">Salvesta muudatused</button>
                 </div>
-                <button type="submit" value="Save" className="btn btn-lg submit-btn">Salvesta muudatused</button>
-            </form>
-        </div>
+            </div>
+        </form>
     );
 }
