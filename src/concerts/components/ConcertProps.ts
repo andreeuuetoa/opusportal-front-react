@@ -1,13 +1,6 @@
 import {ConcertData} from "../DTO/ConcertData";
-import React from "react";
+import {FormProps} from "../../common/components/form/FormProps";
 
-export interface ConcertProps {
+export interface ConcertProps extends FormProps {
     values: ConcertData;
-
-    handleChange: (target:
-                       EventTarget & HTMLInputElement) => void;
-
-    onSubmit: (target: React.MouseEvent) => void;
-
-    validationErrors: string[];
 }

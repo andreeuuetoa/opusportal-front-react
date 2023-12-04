@@ -1,13 +1,6 @@
-import React from "react";
 import {IBook} from "../DTO/IBook";
+import {FormProps} from "../../common/components/form/FormProps";
 
-export interface IPostBooksProps {
+export interface IPostBooksProps extends FormProps {
     bookData: IBook;
-
-    handleChange: (target:
-                       EventTarget & HTMLInputElement) => void;
-
-    onSubmit: (target: React.MouseEvent) => void;
-
-    validationErrors: string[];
 }
