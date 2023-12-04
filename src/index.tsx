@@ -19,7 +19,7 @@ import {Dashboard} from "./dashboard/routes/Dashboard";
 import {Root} from "./root/Root";
 import {Concerts} from "./concerts/routes/Concerts";
 import {Competitions} from "./competitions/views/Competitions";
-import {Users} from "./dashboard/viewparts/Users";
+import {Users} from "./identity/routes/Users";
 import {About} from "./common/routes/About";
 import {AccountSettings} from "./identity/routes/AccountSettings";
 import {CreateUser} from "./identity/routes/CreateUser";
