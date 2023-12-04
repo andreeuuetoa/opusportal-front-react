@@ -3,6 +3,7 @@ import {Footer} from "../common/viewparts/Footer";
 import {Outlet, useNavigate} from "react-router-dom";
 import {createContext, useState} from "react";
 import {JWTResponse} from "../identity/DTO/JWTResponse";
+import {AdminNavbar} from "../common/viewparts/AdminNavbar";
 
 export const JWTContext = createContext<{
     JWTResponse: JWTResponse | null,
@@ -16,6 +17,7 @@ export const Root = () => {
     let rootDiv =
         <>
             <Header/>
+            <AdminNavbar/>
             <div className="container">
                 <main role="main" className="pb-3">
                     <Outlet/>
