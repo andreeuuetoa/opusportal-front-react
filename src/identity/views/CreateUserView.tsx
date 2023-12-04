@@ -16,7 +16,7 @@ export const CreateUserView = (userProps: UserProps) => {
 
     return (
         <form id="registerForm" method="post" action="/src/identity/Account/Register">
-            <h2>Loo uus kasutaja.</h2>
+            <h2>Loo uus kasutaja</h2>
             <hr/>
 
             <ul style={{'display': userProps.validationErrors.length === 0 ? 'none' : ''}}>
