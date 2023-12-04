@@ -8,7 +8,7 @@ export const CreateConcertView = (concertProps: ConcertProps) => {
     const locationValues = LocationValues(concertProps);
 
     return (
-        <form id="registerForm" method="post" action="/src/identity/Account/Register">
+        <form id="registerForm" method="post">
             <h2>Loo uus kontsert</h2>
             <hr/>
 
