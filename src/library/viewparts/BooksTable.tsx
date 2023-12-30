@@ -7,13 +7,13 @@ export const BooksTable = (books: IGetBooksProps) => {
             <div className="table-row">
             <th>
                 <td>
-                    Book name
+                    Raamatu nimi
                 </td>
                 <td>
-                    Authors
+                    Autorid
                 </td>
                 <td>
-                    Year released
+                    Laenutaja
                 </td>
             </th>
             <table>
