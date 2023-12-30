@@ -4,6 +4,6 @@ import {JWTResponse} from "../../identity/DTO/JWTResponse";
 
 export class BookAPI extends BaseEntityAPI<IBook> {
     constructor(setJWTResponse: ((data: JWTResponse | null) => void)) {
-        super('Books', setJWTResponse);
+        super('books', setJWTResponse);
     }
 }
