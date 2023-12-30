@@ -8,13 +8,13 @@ import {Link} from "react-router-dom";
 
 export const Books = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
-    const bookService = new BookAPI(setJWTResponse!);
+    const bookAPI = new BookAPI(setJWTResponse!);
 
     const [data, setData] = useState([] as IBook[]);
 
     useEffect(() => {
         if (JWTResponse) {
-            bookService.getAll(JWTResponse).then(
+            bookAPI.getAll(JWTResponse).then(
                 response => {
                     console.log(response);
                     if (response) {
