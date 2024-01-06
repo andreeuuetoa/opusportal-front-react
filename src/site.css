@@ -39,6 +39,11 @@ a {
     --bs-btn-hover-border-color: #988b3e;
 }
 
+.link-btn {
+    background-color: #fff;
+    width: 25%;
+}
+
 .about-page {
     max-width: 800px;
     top: 50%;

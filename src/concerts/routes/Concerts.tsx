@@ -28,10 +28,26 @@ export const Concerts = () => {
 
     return (
         <>
-            <ConcertsTable concerts={data}/>
-            <Link to="/lisa-kontsert"><button>Lisa kontsert</button></Link>
-            <Link to="/muuda-kontserti"><button>Muuda kontserti</button></Link>
-            <Link to="/kustuta-kontsert"><button>Kustuta kontsert</button></Link>
+            <div className="float-child">
+                <br/>
+                <ConcertsTable concerts={data}/>
+            </div>
+            <div className="float-child">
+                <br/>
+                <Link to="/lisa-kontsert">
+                    <button className="btn link-btn">Lisa kontsert</button>
+                </Link>
+                <br/>
+                <br/>
+                <Link to="/muuda-kontserti">
+                    <button className="btn link-btn">Muuda kontserti</button>
+                </Link>
+                <br/>
+                <br/>
+                <Link to="/kustuta-kontsert">
+                    <button className="btn link-btn">Kustuta kontsert</button>
+                </Link>
+            </div>
         </>
     );
 }
