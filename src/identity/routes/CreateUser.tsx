@@ -1,6 +1,6 @@
 import {CreateUserView} from "../views/CreateUserView";
 import React, {useContext, useState} from "react";
-import {UserData} from "../DTO/UserData";
+import {RegisterData} from "../DTO/RegisterData";
 import {IdentityAPI} from "../API/IdentityAPI";
 import {JWTContext} from "../../root/Root";
 
@@ -12,7 +12,7 @@ export const CreateUser = () => {
         firstName: "",
         lastName: "",
         roleName: ""
-    } as UserData);
+    } as RegisterData);
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 

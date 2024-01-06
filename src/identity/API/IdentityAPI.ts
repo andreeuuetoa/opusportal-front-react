@@ -1,6 +1,6 @@
 import {BaseAPI} from "../../common/API/BaseAPI";
 import {JWTResponse} from "../DTO/JWTResponse";
-import {UserData} from "../DTO/UserData";
+import {RegisterData} from "../DTO/RegisterData";
 import {SignInData} from "../DTO/SignInData";
 
 export class IdentityAPI extends BaseAPI {
@@ -8,7 +8,7 @@ export class IdentityAPI extends BaseAPI {
         super('Identity/Account/');
     }
 
-    async register(data: UserData): Promise<JWTResponse | undefined> {
+    async register(data: RegisterData): Promise<JWTResponse | undefined> {
         try {
             const response = await this.axios.post<JWTResponse>('Register', data);
 

@@ -1,8 +1,8 @@
 import React from "react";
-import {UserData} from "../../DTO/UserData";
+import {RegisterData} from "../../DTO/RegisterData";
 
 export interface UserProps {
-    values: UserData;
+    values: RegisterData;
 
     handleChange: (target:
         EventTarget & HTMLInputElement) => void;
