@@ -33,11 +33,11 @@ export const Books = () => {
     return (
         <>
             <BooksTable books={data}/>
-            <button><Link to="/lisa-raamat">Lisa raamat</Link></button>
-            <button><Link to="/muuda-raamatut">Muuda raamatut</Link></button>
-            <button><Link to="/kustuta-raamat">Kustuta raamat</Link></button>
-            <button><Link to="/laenuta-raamat">Laenuta raamat</Link></button>
-            <button><Link to="/tagasta-raamat">Tagasta raamat</Link></button>
+            <Link to="/lisa-raamat"><button>Lisa raamat</button></Link>
+            <Link to="/muuda-raamatut"><button>Muuda raamatut</button></Link>
+            <Link to="/kustuta-raamat"><button>Kustuta raamat</button></Link>
+            <Link to="/laenuta-raamat"><button>Laenuta raamat</button></Link>
+            <Link to="/tagasta-raamat"><button>Tagasta raamat</button></Link>
         </>
     );
 };

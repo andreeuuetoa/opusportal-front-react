@@ -29,9 +29,9 @@ export const Concerts = () => {
     return (
         <>
             <ConcertsTable concerts={data}/>
-            <button><Link to="/lisa-kontsert">Lisa kontsert</Link></button>
-            <button><Link to="/muuda-kontserti">Muuda kontserti</Link></button>
-            <button><Link to="/kustuta-kontsert">Kustuta kontsert</Link></button>
+            <Link to="/lisa-kontsert"><button>Lisa kontsert</button></Link>
+            <Link to="/muuda-kontserti"><button>Muuda kontserti</button></Link>
+            <Link to="/kustuta-kontsert"><button>Kustuta kontsert</button></Link>
         </>
     );
 }
