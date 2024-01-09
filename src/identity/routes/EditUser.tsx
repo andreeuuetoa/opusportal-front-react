@@ -1,25 +1,19 @@
 import {EditUserView} from "../views/EditUserView";
 import React, {useContext, useState} from "react";
-import {RegisterData} from "../DTO/RegisterData";
 import {JWTContext} from "../../root/Root";
-import {IdentityAPI} from "../API/IdentityAPI";
 import {useParams} from "react-router-dom";
+import {UserAPI} from "../API/UserAPI";
+import {UserDataToEdit} from "../DTO/UserDataToEdit";
 
 export const EditUser = () => {
     const { id } = useParams();
 
-    const identityService = new IdentityAPI();
-
-    const user = identityService.getUserById(id);
-
     const [values, setValues] = useState({
         email: "",
-        password: "",
-        confirmPassword: "",
         firstName: "",
         lastName: "",
         roleName: ""
-    } as RegisterData);
+    } as UserDataToEdit);
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
@@ -27,16 +21,16 @@ export const EditUser = () => {
         setValues({...values, [target.name]: target.value});
     };
 
-    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
+    const {setJWTResponse} = useContext(JWTContext);
+
+    const userAPI = new UserAPI(setJWTResponse!);
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
         if (values.firstName.length === 0 ||
             values.lastName.length === 0 ||
-            values.email.length === 0 ||
-            values.password.length === 0 ||
-            values.password !== values.confirmPassword) {
+            values.email.length === 0) {
             setValidationErrors(["Bad input values!"]);
             return;
         }
@@ -44,17 +38,11 @@ export const EditUser = () => {
         // Remove errors
         setValidationErrors([]);
 
-        // Register the user, get JWT and refresh token
-        const JWTData = await identityService.register(values);
+        const updatedUser = await userAPI.updateUser(id!, values);
 
-        if (JWTData === undefined) {
-            // TODO: Get error info
-            setValidationErrors(["No JWT!"]);
+        if (updatedUser === undefined) {
+            setValidationErrors(["Oops, something went wrong. Unable to update user."]);
             return;
-        }
-
-        if (setJWTResponse) {
-            setJWTResponse(JWTData);
         }
     };
 
