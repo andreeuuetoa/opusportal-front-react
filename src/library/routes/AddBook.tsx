@@ -3,6 +3,7 @@ import {BookData} from "../DTO/BookData";
 import {AddBookView} from "../views/AddBookView";
 import {JWTContext} from "../../root/Root";
 import {BookAPI} from "../API/BookAPI";
+import {useNavigate} from "react-router-dom";
 
 export const AddBook = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -19,6 +20,7 @@ export const AddBook = () => {
     };
 
     const bookAPI = new BookAPI(setJWTResponse!);
+    const navigate = useNavigate();
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
@@ -33,6 +35,8 @@ export const AddBook = () => {
         setValidationErrors([]);
 
         await bookAPI.create(values);
+
+        navigate("/raamatud");
     };
 
     return (

@@ -3,6 +3,7 @@ import React, {useContext, useState} from "react";
 import {RegisterData} from "../DTO/RegisterData";
 import {IdentityAPI} from "../API/IdentityAPI";
 import {JWTContext} from "../../root/Root";
+import {useNavigate} from "react-router-dom";
 
 export const CreateUser = () => {
     const [values, setValues] = useState({
@@ -23,6 +24,7 @@ export const CreateUser = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const identityAPI = new IdentityAPI();
+    const navigate = useNavigate();
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
@@ -40,6 +42,8 @@ export const CreateUser = () => {
         setValidationErrors([]);
 
         await identityAPI.register(values);
+
+        navigate("/kasutajad");
     };
 
     return (

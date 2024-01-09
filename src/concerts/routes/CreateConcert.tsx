@@ -4,6 +4,7 @@ import {JWTContext} from "../../root/Root";
 import {IdentityAPI} from "../../identity/API/IdentityAPI";
 import {ConcertData} from "../DTO/ConcertData";
 import {ConcertAPI} from "../API/ConcertAPI";
+import {useNavigate} from "react-router-dom";
 
 export const CreateConcert = () => {
     const [values, setValues] = useState({
@@ -20,6 +21,7 @@ export const CreateConcert = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const concertAPI = new ConcertAPI(setJWTResponse!);
+    const navigate = useNavigate();
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
@@ -34,6 +36,8 @@ export const CreateConcert = () => {
         setValidationErrors([]);
 
         await concertAPI.create(values);
+
+        navigate("/kontserdid");
     };
 
     return (
