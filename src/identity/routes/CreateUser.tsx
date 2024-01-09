@@ -22,7 +22,7 @@ export const CreateUser = () => {
 
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
-    const identityService = new IdentityAPI();
+    const identityAPI = new IdentityAPI();
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
@@ -39,18 +39,7 @@ export const CreateUser = () => {
         // Remove errors
         setValidationErrors([]);
 
-        // Register the user, get JWT and refresh token
-        const JWTData = await identityService.register(values);
-
-        if (JWTData === undefined) {
-            // TODO: Get error info
-            setValidationErrors(["No JWT!"]);
-            return;
-        }
-
-        if (setJWTResponse) {
-            setJWTResponse(JWTData);
-        }
+        await identityAPI.register(values);
     };
 
     return (
