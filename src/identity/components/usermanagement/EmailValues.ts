@@ -1,7 +1,8 @@
-import {UserProps} from "./UserProps";
+import {RegisterUserProps} from "./RegisterUserProps";
 import React from "react";
+import {EditUserProps} from "./EditUserProps";
 
-export const EmailValues = (userProps: UserProps) => {
+export const EmailValues = (userProps: RegisterUserProps | EditUserProps) => {
     const eventHandler = (e: React.ChangeEvent) => {userProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {

@@ -148,8 +148,8 @@ button.accept-policy {
     max-width: 800px;
 }
 
-.table-row {
-    margin-right: 100px;
+.delete-link {
+    color: red;
 }
 
 .user-addition-page-roles {

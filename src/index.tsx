@@ -24,6 +24,8 @@ import {About} from "./common/routes/About";
 import {AccountSettings} from "./identity/routes/AccountSettings";
 import {CreateUser} from "./identity/routes/CreateUser";
 import {CreateConcert} from "./concerts/routes/CreateConcert";
+import {EditUser} from "./identity/routes/EditUser";
+import {EditConcert} from "./concerts/routes/EditConcert";
 
 const router = createBrowserRouter([
     {
@@ -94,6 +96,11 @@ const router = createBrowserRouter([
             {
                 path: "/lisa-kasutaja",
                 element: <CreateUser/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/muuda-kasutajat/:id",
+                element: <EditUser/>,
                 errorElement: <ErrorPage/>
             },
             {

@@ -1,7 +1,7 @@
 import React from "react";
 import {RegisterData} from "../../DTO/RegisterData";
 
-export interface UserProps {
+export interface RegisterUserProps {
     values: RegisterData;
 
     handleChange: (target:

@@ -37,16 +37,6 @@ export const Users = () => {
                 <Link to="/lisa-kasutaja">
                     <button className="btn link-btn">Lisa kasutaja</button>
                 </Link>
-                <br/>
-                <br/>
-                <Link to="/muuda-kasutajat">
-                    <button className="btn link-btn">Muuda kasutajat</button>
-                </Link>
-                <br/>
-                <br/>
-                <Link to="/kustuta-kasutaja">
-                    <button className="btn link-btn">Kustuta kasutaja</button>
-                </Link>
             </div>
         </>
     );

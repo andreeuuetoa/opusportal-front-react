@@ -1,7 +1,7 @@
-import {UserProps} from "./UserProps";
+import {RegisterUserProps} from "./RegisterUserProps";
 import React from "react";
 
-export const PasswordValues = (userProps: UserProps) => {
+export const PasswordValues = (userProps: RegisterUserProps) => {
     const eventHandler = (e: React.ChangeEvent) => {userProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {

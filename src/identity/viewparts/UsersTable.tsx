@@ -5,13 +5,13 @@ import {UsersTableHeader} from "./UsersTableHeader";
 export const UsersTable = (users: IGetUsersProps) => {
     return (
         <>
-            <div className="table-row">
+            <div className="table">
                 <table>
                     <UsersTableHeader/>
                     <tbody>
                     {
                         users.users.map(user => (
-                            <tr><UsersTableRow name={user.name} roleName={user.roleName}/></tr>))
+                            <UsersTableRow name={user.name} roleName={user.roleName}/>))
                     }
                     </tbody>
                 </table>
