@@ -20,39 +20,37 @@ export const EditUserView = (userProps: EditUserProps) => {
                 </li>
             </ul>
 
-            <div>
-                <div className="float-child">
-                    <FormPart fieldElements={emailValues} />
-                    <FormPart fieldElements={firstNameValues} />
-                    <FormPart fieldElements={lastNameValues} />
-                    <div className="user-addition-page-roles">
-                        <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
-                        <div className="float-child">
-                            <div className="form-check">
-                                <input className="form-check-input" type="radio" id="student" value="student"
-                                       name="userRole"/>
-                                <label className="form-check-label" htmlFor="student">Õpilane</label>
-                            </div>
-                            <div className="form-check">
-                                <input className="form-check-input" type="radio" id="teacher" value="teacher"
-                                       name="userRole"/>
-                                <label className="form-check-label" htmlFor="teacher">Õpetaja</label>
-                            </div>
-                            <div className="form-check">
-                                <input className="form-check-input" type="radio" id="other" value="other"
-                                       name="userRole"/>
-                                <label className="form-check-label" htmlFor="other">Muu</label>
-                            </div>
+            <div className="float-child">
+                <FormPart fieldElements={emailValues}/>
+                <FormPart fieldElements={firstNameValues}/>
+                <FormPart fieldElements={lastNameValues}/>
+                <div className="user-addition-page-roles">
+                    <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
+                    <div className="float-child">
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" id="student" value="student"
+                                   name="userRole"/>
+                            <label className="form-check-label" htmlFor="student">Õpilane</label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" id="teacher" value="teacher"
+                                   name="userRole"/>
+                            <label className="form-check-label" htmlFor="teacher">Õpetaja</label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" id="other" value="other"
+                                   name="userRole"/>
+                            <label className="form-check-label" htmlFor="other">Muu</label>
                         </div>
                     </div>
                 </div>
-                <div className="float-child">
-                    <button
-                        onClick={(e) => userProps.onSubmit(e)}
-                        id="registerSubmit" className="w-50 btn btn-lg submit-btn">
-                        Salvesta muudatused
-                    </button>
-                </div>
+            </div>
+            <div className="float-child">
+                <button
+                    onClick={(e) => userProps.onSubmit(e)}
+                    id="registerSubmit" className="w-50 btn btn-lg submit-btn">
+                    Salvesta muudatused
+                </button>
             </div>
         </form>
     );
