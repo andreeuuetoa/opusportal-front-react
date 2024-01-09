@@ -33,7 +33,7 @@ export const CreateConcert = () => {
         // Remove errors
         setValidationErrors([]);
 
-        await concertAPI.createConcert(values);
+        await concertAPI.create(values);
     };
 
     return (

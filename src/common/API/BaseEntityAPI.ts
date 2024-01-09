@@ -46,4 +46,19 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
             return undefined;
         }
     }
+
+    async create(data: TEntity) {
+        try {
+            const response = await this.axios.post<JWTResponse>('Create', data);
+
+            console.log('Response: ', response);
+            if (response.status === 200) {
+                return response.data;
+            }
+            return undefined;
+        } catch (error) {
+            console.log(error);
+            return undefined;
+        }
+    }
 }
