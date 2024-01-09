@@ -27,26 +27,38 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
 
             <div>
                 <div className="float-child">
-                    <FormPart fieldElements={emailValues} />
-                    <FormPart fieldElements={firstNameValues} />
-                    <FormPart fieldElements={lastNameValues} />
-                    <FormPart fieldElements={passwordValues} />
-                    <FormPart fieldElements={confirmPasswordValues} />
+                    <FormPart fieldElements={emailValues}/>
+                    <FormPart fieldElements={firstNameValues}/>
+                    <FormPart fieldElements={lastNameValues}/>
+                    <FormPart fieldElements={passwordValues}/>
+                    <FormPart fieldElements={confirmPasswordValues}/>
                     <div className="user-addition-page-roles">
                         <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
                         <div className="float-child">
-                            <input type="radio" value="student" name="userRole" />Õpilane<br/>
-                            <input type="radio" value="teacher" name="userRole" />Õpetaja<br/>
-                            <input type="radio" value="other" name="userRole" />Muu
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" id="student" value="student"
+                                       name="userRole"/>
+                                <label className="form-check-label" htmlFor="student">Õpilane</label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" id="teacher" value="teacher"
+                                       name="userRole"/>
+                                <label className="form-check-label" htmlFor="teacher">Õpetaja</label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" id="other" value="other"
+                                       name="userRole"/>
+                                <label className="form-check-label" htmlFor="other">Muu</label>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="float-child">
-                <button
-                    onClick={(e) => userProps.onSubmit(e)}
-                    id="registerSubmit" className="w-50 btn btn-lg submit-btn">
-                    Loo kasutaja
-                </button>
+                    <button
+                        onClick={(e) => userProps.onSubmit(e)}
+                        id="registerSubmit" className="w-50 btn btn-lg submit-btn">
+                        Loo kasutaja
+                    </button>
                 </div>
             </div>
         </form>
