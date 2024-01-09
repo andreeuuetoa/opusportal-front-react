@@ -1,4 +1,4 @@
-import {ConcertProps} from "../components/ConcertProps";
+import {ConcertProps} from "../DTO/ConcertProps";
 import {FormPart} from "../../common/viewparts/FormPart";
 import {NameValues} from "../components/NameValues";
 import {LocationValues} from "../components/LocationValues";

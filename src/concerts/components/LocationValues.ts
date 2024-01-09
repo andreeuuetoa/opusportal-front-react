@@ -1,4 +1,4 @@
-import {ConcertProps} from "./ConcertProps";
+import {ConcertProps} from "../DTO/ConcertProps";
 import React from "react";
 
 export const LocationValues = (concertProps: ConcertProps) => {
