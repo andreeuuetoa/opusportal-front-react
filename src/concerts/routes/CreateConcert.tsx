@@ -3,6 +3,7 @@ import React, {useContext, useState} from "react";
 import {JWTContext} from "../../root/Root";
 import {IdentityAPI} from "../../identity/API/IdentityAPI";
 import {ConcertData} from "../DTO/ConcertData";
+import {ConcertAPI} from "../API/ConcertAPI";
 
 export const CreateConcert = () => {
     const [values, setValues] = useState({
@@ -18,7 +19,7 @@ export const CreateConcert = () => {
 
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
-    const identityService = new IdentityAPI();
+    const concertAPI = new ConcertAPI(setJWTResponse!);
 
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
@@ -32,7 +33,9 @@ export const CreateConcert = () => {
         // Remove errors
         setValidationErrors([]);
 
+        await concertAPI.createConcert(values);
     };
+
     return (
         <CreateConcertView values={values} handleChange={handleChange} onSubmit={onSubmit}
                            validationErrors={validationErrors}/>
