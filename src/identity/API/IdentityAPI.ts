@@ -38,7 +38,7 @@ export class IdentityAPI extends BaseAPI {
         }
     }
 
-    async signOut(JWTdata: JWTResponse) {
+    async signOut(JWTdata: JWTResponse): Promise<true | undefined> {
         try {
             const response = await this.axios.post(
                 'SignOut',
@@ -61,7 +61,7 @@ export class IdentityAPI extends BaseAPI {
         }
     }
 
-    async refreshToken(JWT: JWTResponse) {
+    async refreshToken(JWT: JWTResponse): Promise<JWTResponse | undefined> {
         console.log(JWT);
 
         try {
