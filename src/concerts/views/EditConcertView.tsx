@@ -18,18 +18,16 @@ export const EditConcertView = (concertProps: ConcertProps) => {
                 </li>
             </ul>
 
-            <div>
-                <div className="float-child">
-                    <FormPart fieldElements={nameValues} />
-                    <FormPart fieldElements={locationValues} />
-                </div>
-                <div className="float-child">
-                    <button
-                        onClick={(e) => concertProps.onSubmit(e)}
-                        id="registerSubmit" className="w-50 btn btn-lg submit-btn">
-                        Lisa kontsert
-                    </button>
-                </div>
+            <div className="float-child">
+                <FormPart fieldElements={nameValues}/>
+                <FormPart fieldElements={locationValues}/>
+            </div>
+            <div className="float-child">
+                <button
+                    onClick={(e) => concertProps.onSubmit(e)}
+                    id="registerSubmit" className="w-50 btn btn-lg submit-btn">
+                    Lisa kontsert
+                </button>
             </div>
         </form>
     );

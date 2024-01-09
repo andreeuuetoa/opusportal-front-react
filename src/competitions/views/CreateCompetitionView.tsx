@@ -16,17 +16,15 @@ export const CreateCompetitionView = (competitionProps: CompetitionProps) => {
                 </li>
             </ul>
 
-            <div>
-                <div className="float-child">
-                    <FormPart fieldElements={nameValues}/>
-                </div>
-                <div className="float-child">
-                    <button
-                        onClick={(e) => competitionProps.onSubmit(e)}
-                        id="registerSubmit" className="w-50 btn btn-lg submit-btn">
-                        Lisa konkurss
-                    </button>
-                </div>
+            <div className="float-child">
+                <FormPart fieldElements={nameValues}/>
+            </div>
+            <div className="float-child">
+                <button
+                    onClick={(e) => competitionProps.onSubmit(e)}
+                    id="registerSubmit" className="w-50 btn btn-lg submit-btn">
+                    Lisa konkurss
+                </button>
             </div>
         </form>
     );
