@@ -37,16 +37,6 @@ export const Concerts = () => {
                 <Link to="/lisa-kontsert">
                     <button className="btn link-btn">Lisa kontsert</button>
                 </Link>
-                <br/>
-                <br/>
-                <Link to="/muuda-kontserti">
-                    <button className="btn link-btn">Muuda kontserti</button>
-                </Link>
-                <br/>
-                <br/>
-                <Link to="/kustuta-kontsert">
-                    <button className="btn link-btn">Kustuta kontsert</button>
-                </Link>
             </div>
         </>
     );
