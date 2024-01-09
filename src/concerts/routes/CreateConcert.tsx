@@ -1,7 +1,6 @@
 import {CreateConcertView} from "../views/CreateConcertView";
 import React, {useContext, useState} from "react";
 import {JWTContext} from "../../root/Root";
-import {IdentityAPI} from "../../identity/API/IdentityAPI";
 import {ConcertData} from "../DTO/ConcertData";
 import {ConcertAPI} from "../API/ConcertAPI";
 import {useNavigate} from "react-router-dom";
@@ -18,7 +17,7 @@ export const CreateConcert = () => {
         setValues({...values, [target.name]: target.value});
     };
 
-    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
+    const {setJWTResponse} = useContext(JWTContext);
 
     const concertAPI = new ConcertAPI(setJWTResponse!);
     const navigate = useNavigate();

@@ -6,7 +6,7 @@ import {BookAPI} from "../API/BookAPI";
 import {useNavigate} from "react-router-dom";
 
 export const AddBook = () => {
-    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
+    const {setJWTResponse} = useContext(JWTContext);
 
     const [values, setValues] = useState({
         name: "",
