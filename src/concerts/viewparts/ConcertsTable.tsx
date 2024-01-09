@@ -5,13 +5,14 @@ import {IGetConcertsProps} from "../domain/IGetConcertsProps";
 export const ConcertsTable = (concerts: IGetConcertsProps) => {
     return (
         <>
-            <div className="table-row">
+            <div className="table">
                 <table>
                     <ConcertsTableHeader/>
                     <tbody>
                     {
                         concerts.concerts.map(concert => (
-                            <tr><ConcertsTableRow name={concert.name} location={concert.location} startTime={concert.startTime} endTime={concert.endTime}/></tr>))
+                            <tr><ConcertsTableRow name={concert.name} location={concert.location}
+                                                  startTime={concert.startTime} endTime={concert.endTime}/></tr>))
                     }
                     </tbody>
                 </table>

@@ -84,6 +84,11 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage/>
             },
             {
+                path: "/muuda-kontserti/:id",
+                element: <EditConcert/>,
+                errorElement: <ErrorPage/>
+            },
+            {
                 path: "/konkursid",
                 element: <Competitions/>,
                 errorElement: <ErrorPage/>
