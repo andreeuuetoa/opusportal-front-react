@@ -1,6 +1,6 @@
 import {IGetUsersProps} from "../domain/IGetUsersProps";
-import {UsersTableRow} from "./UsersTableRow";
-import {UsersTableHeader} from "./UsersTableHeader";
+import {UsersTableRow} from "../viewparts/UsersTableRow";
+import {UsersTableHeader} from "../viewparts/UsersTableHeader";
 
 export const UsersTable = (users: IGetUsersProps) => {
     return (

@@ -1,4 +1,4 @@
-import {ConcertsTable} from "../viewparts/ConcertsTable";
+import {ConcertsTable} from "../views/ConcertsTable";
 import {Link} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {ConcertData} from "../DTO/ConcertData";

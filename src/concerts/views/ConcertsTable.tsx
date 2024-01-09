@@ -1,5 +1,5 @@
-import {ConcertsTableHeader} from "./ConcertsTableHeader";
-import {ConcertsTableRow} from "./ConcertsTableRow";
+import {ConcertsTableHeader} from "../viewparts/ConcertsTableHeader";
+import {ConcertsTableRow} from "../viewparts/ConcertsTableRow";
 import {IGetConcertsProps} from "../domain/IGetConcertsProps";
 
 export const ConcertsTable = (concerts: IGetConcertsProps) => {

@@ -18,7 +18,7 @@ import {AddBook} from "./library/routes/AddBook";
 import {Dashboard} from "./dashboard/routes/Dashboard";
 import {Root} from "./root/Root";
 import {Concerts} from "./concerts/routes/Concerts";
-import {Competitions} from "./competitions/views/Competitions";
+import {Competitions} from "./competitions/routes/Competitions";
 import {Users} from "./identity/routes/Users";
 import {About} from "./common/routes/About";
 import {AccountSettings} from "./identity/routes/AccountSettings";

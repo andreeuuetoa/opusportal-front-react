@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from "react";
 import {JWTContext} from "../../root/Root";
 import {UserData} from "../DTO/UserData";
-import {UsersTable} from "../viewparts/UsersTable";
+import {UsersTable} from "../views/UsersTable";
 import {UserAPI} from "../API/UserAPI";
 import {Link} from "react-router-dom";
 

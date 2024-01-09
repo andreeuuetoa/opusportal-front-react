@@ -1,6 +1,6 @@
 import {IGetBooksProps} from "../domain/IGetBooksProps";
-import {BooksTableRow} from "./BooksTableRow";
-import {BooksTableHeader} from "./BooksTableHeader";
+import {BooksTableRow} from "../viewparts/BooksTableRow";
+import {BooksTableHeader} from "../viewparts/BooksTableHeader";
 
 export const BooksTable = (books: IGetBooksProps) => {
     return (

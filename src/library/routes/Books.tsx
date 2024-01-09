@@ -2,7 +2,7 @@ import {useContext, useEffect, useState} from "react";
 import {JWTContext} from "../../root/Root";
 import {BookAPI} from "../API/BookAPI";
 import {BookData} from "../DTO/BookData";
-import {BooksTable} from "../viewparts/BooksTable";
+import {BooksTable} from "../views/BooksTable";
 import {Link} from "react-router-dom";
 
 
