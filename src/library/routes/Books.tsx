@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from "react";
 import {JWTContext} from "../../root/Root";
 import {BookAPI} from "../API/BookAPI";
-import {IBook} from "../DTO/IBook";
+import {BookData} from "../DTO/BookData";
 import {BooksTable} from "../viewparts/BooksTable";
 import {Link} from "react-router-dom";
 
@@ -10,7 +10,7 @@ export const Books = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
     const bookAPI = new BookAPI(setJWTResponse!);
 
-    const [data, setData] = useState([] as IBook[]);
+    const [data, setData] = useState([] as BookData[]);
 
     useEffect(() => {
         if (JWTResponse) {
@@ -40,26 +40,6 @@ export const Books = () => {
                 <br/>
                 <Link to="/lisa-raamat">
                     <button className="btn link-btn">Lisa raamat</button>
-                </Link>
-                <br/>
-                <br/>
-                <Link to="/muuda-raamatut">
-                    <button className="btn link-btn">Muuda raamatut</button>
-                </Link>
-                <br/>
-                <br/>
-                <Link to="/kustuta-raamat">
-                    <button className="btn link-btn">Kustuta raamat</button>
-                </Link>
-                <br/>
-                <br/>
-                <Link to="/laenuta-raamat">
-                    <button className="btn link-btn">Laenuta raamat</button>
-                </Link>
-                <br/>
-                <br/>
-                <Link to="/tagasta-raamat">
-                    <button className="btn link-btn">Tagasta raamat</button>
                 </Link>
             </div>
         </>

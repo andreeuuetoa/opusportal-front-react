@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import {IBook} from "../DTO/IBook";
+import {BookData} from "../DTO/BookData";
 import {AddBookView} from "../views/AddBookView";
 import {JWTContext} from "../../root/Root";
 
@@ -10,7 +10,7 @@ export const AddBook = () => {
         name: "",
         authors: "",
         yearReleased: 0
-    } as IBook);
+    } as BookData);
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 

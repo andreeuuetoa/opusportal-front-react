@@ -5,13 +5,13 @@ import {BooksTableHeader} from "./BooksTableHeader";
 export const BooksTable = (books: IGetBooksProps) => {
     return (
         <>
-            <div className="table-row">
+            <div className="table">
                 <table>
                     <BooksTableHeader />
                     <tbody>
                     {
                         books.books.map(b => (
-                            <tr><BooksTableRow name={b.name} authors={b.authors} yearReleased={b.yearReleased}/></tr>))
+                            <tr><BooksTableRow name={b.name} authors={b.authors}/></tr>))
                     }
                     </tbody>
                 </table>

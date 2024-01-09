@@ -1,6 +1,7 @@
-import {IBook} from "../DTO/IBook";
+import {BookData} from "../DTO/BookData";
+import {Link} from "react-router-dom";
 
-export const BooksTableRow = (book: IBook) => {
+export const BooksTableRow = (book: BookData) => {
     return (
         <>
             <td>
@@ -10,7 +11,16 @@ export const BooksTableRow = (book: IBook) => {
                 {book.authors}
             </td>
             <td>
-                {book.yearReleased}
+                <Link to="/muuda-raamatut">Muuda</Link>
+            </td>
+            <td>
+                <Link to="/kustuta-raamat">Kustuta</Link>
+            </td>
+            <td>
+                <Link to="/laenuta-raamat">Laenuta</Link>
+            </td>
+            <td>
+                <Link to="/tagasta-raamat">Tagasta</Link>
             </td>
         </>
     );

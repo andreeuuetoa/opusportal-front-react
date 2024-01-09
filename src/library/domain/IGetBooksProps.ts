@@ -1,5 +1,5 @@
-import {IBook} from "../DTO/IBook";
+import {BookData} from "../DTO/BookData";
 
 export interface IGetBooksProps {
-    books: IBook[];
+    books: BookData[];
 }

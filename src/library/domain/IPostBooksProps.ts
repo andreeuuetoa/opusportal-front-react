@@ -1,6 +1,6 @@
-import {IBook} from "../DTO/IBook";
+import {BookData} from "../DTO/BookData";
 import {FormProps} from "../../common/components/form/FormProps";
 
 export interface IPostBooksProps extends FormProps {
-    bookData: IBook;
+    bookData: BookData;
 }
