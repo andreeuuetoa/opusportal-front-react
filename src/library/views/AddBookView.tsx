@@ -1,9 +1,9 @@
-import {IPostBooksProps} from "../domain/IPostBooksProps";
+import {IPostBookProps} from "../domain/IPostBookProps";
 import {FormPart} from "../../common/viewparts/FormPart";
 import BookValues from "../components/BookValues";
 import AuthorsValues from "../components/AuthorsValues";
 
-export const AddBookView = (bookProps: IPostBooksProps) => {
+export const AddBookView = (bookProps: IPostBookProps) => {
     const bookValues = BookValues(bookProps);
     const authorsValues = AuthorsValues(bookProps);
 
