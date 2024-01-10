@@ -1,6 +1,10 @@
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {JWTContext} from "../../root/Root";
 
 export const Header = () => {
+    const {JWTResponse} = useContext(JWTContext);
+
     return (
         <header>
             <nav
@@ -15,7 +19,10 @@ export const Header = () => {
                     <div className="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <ul className="navbar-nav" />
                         <ul className="navbar-nav">
-                            <li className="nav-item">
+                            <li className="nav-item" style={{'display': JWTResponse == null ? '' : 'none'}}>
+                                <Link className="nav-link text-light" to="/logi-sisse">Logi sisse</Link>
+                            </li>
+                            <li className="nav-item" style={{'display': JWTResponse == null ? 'none' : ''}}>
                                 <Link className="nav-link text-light" to="/logi-valja">Logi välja</Link>
                             </li>
                         </ul>
