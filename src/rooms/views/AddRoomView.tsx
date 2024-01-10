@@ -7,7 +7,7 @@ const AddRoomView = (roomProps: IPostRoomProps) => {
 
     return (
         <div className="w-50">
-            <form id="add-book-form" method="post">
+            <form id="add-room-form" method="post">
                 <h2>Lisa ruum</h2>
                 <hr/>
 
