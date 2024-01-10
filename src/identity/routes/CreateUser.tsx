@@ -29,12 +29,28 @@ export const CreateUser = () => {
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
-        if (values.firstName.length === 0 ||
-            values.lastName.length === 0 ||
-            values.email.length === 0 ||
-            values.password.length === 0 ||
-            values.password !== values.confirmPassword) {
-            setValidationErrors(["Bad input values!"]);
+        if (values.firstName.length === 0) {
+            setValidationErrors(["Kasutaja eesnimi ei saa olla tühi!"]);
+            return;
+        }
+
+        if (values.lastName.length === 0) {
+            setValidationErrors(["Kasutaja perenimi ei saa olla tühi!"]);
+            return;
+        }
+
+        if (values.email.length === 0) {
+            setValidationErrors(["Kasutaja meiliaadress ei saa olla tühi!"]);
+            return;
+        }
+
+        if (values.password.length === 0) {
+            setValidationErrors(["Kasutajal peab olema salasõna!"]);
+            return;
+        }
+
+        if (values.password !== values.confirmPassword) {
+            setValidationErrors(["Salasõnad ei ühti!"]);
             return;
         }
 
