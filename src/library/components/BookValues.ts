@@ -1,7 +1,7 @@
 import React from "react";
-import {IPostBookProps} from "../domain/IPostBookProps";
+import {BookProps} from "../domain/BookProps";
 
-const BookValues = (bookProps: IPostBookProps) => {
+const BookValues = (bookProps: BookProps) => {
     const eventHandler = (e: React.ChangeEvent) => {bookProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {
