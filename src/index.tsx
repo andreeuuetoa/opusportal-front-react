@@ -27,6 +27,7 @@ import {CreateConcert} from "./concerts/routes/CreateConcert";
 import {EditUser} from "./identity/routes/EditUser";
 import {EditConcert} from "./concerts/routes/EditConcert";
 import {CreateCompetition} from "./competitions/routes/CreateCompetition";
+import Rooms from "./rooms/routes/Rooms";
 
 const router = createBrowserRouter([
     {
@@ -97,6 +98,11 @@ const router = createBrowserRouter([
             {
                 path: "/lisa-konkurss",
                 element: <CreateCompetition/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/ruumid",
+                element: <Rooms/>,
                 errorElement: <ErrorPage/>
             },
             {
