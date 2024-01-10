@@ -17,7 +17,6 @@ export const Root = () => {
     let rootDiv =
         <>
             <Header/>
-            <AdminNavbar/>
             <div className="container">
                 <main role="main" className="pb-3">
                     <Outlet/>

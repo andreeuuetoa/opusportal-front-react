@@ -12,7 +12,6 @@ export const ErrorPage = () => {
 
     return (
         <>
-            <Header/>
             <div id="error-page" className="container">
                 <h1>Ups!</h1>
                 <p>Vabandust, midagi läks ootamatult valesti.</p>
@@ -20,7 +19,6 @@ export const ErrorPage = () => {
                     Viga: <i>{error.statusText || error.message}</i>
                 </p>
             </div>
-            <Footer/>
         </>
     );
 };
