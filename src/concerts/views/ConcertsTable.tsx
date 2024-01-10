@@ -12,7 +12,7 @@ export const ConcertsTable = (concerts: IGetConcertsProps) => {
                     {
                         concerts.concerts.map(concert => (
                             <tr><ConcertsTableRow name={concert.name} location={concert.location}
-                                                  startTime={concert.startTime} endTime={concert.endTime}/></tr>))
+                                                  startTime={concert.startTime}/></tr>))
                     }
                     </tbody>
                 </table>

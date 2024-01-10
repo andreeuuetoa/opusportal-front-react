@@ -4,5 +4,5 @@ export interface ConcertData extends IBaseEntity {
     name: string;
     location: string;
     startTime: string;
-    endTime: string;
+    competitionId?: string;
 }

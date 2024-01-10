@@ -13,9 +13,6 @@ export const ConcertsTableRow = (concert: ConcertData) => {
             <td>
                 {concert.startTime}
             </td>
-            <td>
-                {concert.endTime}
-            </td>
             <td><Link to="/muuda-kasutajat">Muuda</Link></td>
             <td><Link className="delete-link" to="/kustuta-kasutaja">Kustuta</Link></td>
         </>
