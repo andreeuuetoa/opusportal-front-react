@@ -49,7 +49,7 @@ export const EditUser = () => {
         const updatedUser = await userAPI.updateUser(id!, values);
 
         if (updatedUser === undefined) {
-            setValidationErrors(["Oops, something went wrong. Unable to update user."]);
+            setValidationErrors(["Vabandust, midagi läks valesti. Kasutajat ei saadud uuendada."]);
             return;
         }
     };
