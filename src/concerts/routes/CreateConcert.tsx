@@ -25,9 +25,13 @@ export const CreateConcert = () => {
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
-        if (values.name.length === 0 ||
-            values.location.length === 0) {
-            setValidationErrors(["Bad input values!"]);
+        if (values.name.length === 0) {
+            setValidationErrors(["Kontserdi nimi ei saa olla tühi!"]);
+            return;
+        }
+
+        if (values.location.length === 0) {
+            setValidationErrors(["Kontserdi asukoht ei saa olla tühi!"]);
             return;
         }
 
