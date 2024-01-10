@@ -10,7 +10,7 @@ export const EditUserView = (userProps: EditUserProps) => {
     const lastNameValues = LastNameValues(userProps);
 
     return (
-        <form id="registerForm" method="post" action="/src/identity/Account/Register">
+        <form id="registerForm" method="put" action="/src/identity/Account/EditUser">
             <h2>Muuda kasutajat</h2>
             <hr/>
 
