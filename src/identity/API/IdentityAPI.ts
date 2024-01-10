@@ -2,6 +2,8 @@ import {BaseAPI} from "../../common/API/BaseAPI";
 import {JWTResponse} from "../DTO/JWTResponse";
 import {RegisterData} from "../DTO/RegisterData";
 import {SignInData} from "../DTO/SignInData";
+import {useState} from "react";
+import {SignOutData} from "../DTO/SignOutData";
 
 export class IdentityAPI extends BaseAPI {
     constructor() {
@@ -39,10 +41,14 @@ export class IdentityAPI extends BaseAPI {
     }
 
     async signOut(JWTdata: JWTResponse): Promise<true | undefined> {
+        const [signOutData] = useState({
+            refreshToken: JWTdata.refreshToken
+        } as SignOutData);
+
         try {
             const response = await this.axios.post(
                 'SignOut',
-                JWTdata,
+                signOutData,
                 {
                     headers: {
                         'Authorization': 'Bearer ' + JWTdata.JWT
