@@ -3,13 +3,19 @@ import React, {useContext, useState} from "react";
 import {JWTContext} from "../../root/Root";
 import {ConcertData} from "../DTO/ConcertData";
 import {ConcertAPI} from "../API/ConcertAPI";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 export const CreateConcert = () => {
     const [values, setValues] = useState({
         name: "",
-        location: ""
+        location: "",
+        competitionId: undefined
     } as ConcertData);
+
+    const { competitionId } = useParams();
+    if (competitionId !== undefined) {
+        values.competitionId = competitionId;
+    }
 
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
@@ -39,6 +45,11 @@ export const CreateConcert = () => {
         setValidationErrors([]);
 
         await concertAPI.create(values);
+
+        if (competitionId !== undefined) {
+            console.log("ID on olemas!");
+            navigate("/konkursid");
+        }
 
         navigate("/kontserdid");
     };

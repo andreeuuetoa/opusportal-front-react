@@ -14,8 +14,9 @@ export const CompetitionsTableRow = (competition: CompetitionData) => {
                     ))
                 }
             </td>
-            <td><Link to="/muuda-kasutajat">Muuda</Link></td>
-            <td><Link className="delete-link" to="/kustuta-kasutaja">Kustuta</Link></td>
+            <td><Link to={`/muuda-konkurssi/${competition.id}`}>Muuda</Link></td>
+            <td><Link className="delete-link" to={`/kustuta-konkurss/${competition.id}`}>Kustuta</Link></td>
+            <td><Link to={`/lisa-kontsert/${competition.id}`}>Lisa voor</Link></td>
         </>
     );
 }

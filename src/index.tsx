@@ -82,7 +82,7 @@ const router = createBrowserRouter([
                 errorElement: <ErrorPage/>
             },
             {
-                path: "/lisa-kontsert",
+                path: "/lisa-kontsert/:id?",
                 element: <CreateConcert/>,
                 errorElement: <ErrorPage/>
             },
