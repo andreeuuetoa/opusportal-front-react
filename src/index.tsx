@@ -28,6 +28,7 @@ import {EditUser} from "./identity/routes/EditUser";
 import {EditConcert} from "./concerts/routes/EditConcert";
 import {CreateCompetition} from "./competitions/routes/CreateCompetition";
 import Rooms from "./rooms/routes/Rooms";
+import AddRoom from "./rooms/routes/AddRoom";
 
 const router = createBrowserRouter([
     {
@@ -103,6 +104,11 @@ const router = createBrowserRouter([
             {
                 path: "/ruumid",
                 element: <Rooms/>,
+                errorElement: <ErrorPage/>
+            },
+            {
+                path: "/lisa-ruum",
+                element: <AddRoom/>,
                 errorElement: <ErrorPage/>
             },
             {
