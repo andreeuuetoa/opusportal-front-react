@@ -1,13 +1,15 @@
 import { StudentDashboard } from "../views/StudentDashboard";
 import {TeacherDashboard} from "../views/TeacherDashboard";
 import {ErrorPage} from "../../common/routes/ErrorPage";
+import {useContext} from "react";
+import {JWTContext} from "../../root/Root";
 
 export const Dashboard = () => {
-    const role = "Student";
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
-    if (role === "Student") {
+    if (JWTResponse?.role === "Student") {
         return <StudentDashboard/>;
-    } else if (role === "Teacher") {
+    } else if (JWTResponse?.role === "Teacher") {
         return <TeacherDashboard/>;
     } else {
         return <ErrorPage/>;
