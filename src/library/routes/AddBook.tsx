@@ -25,9 +25,13 @@ export const AddBook = () => {
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
-        if (values.name.length === 0 ||
-            values.authors.length === 0) {
-            setValidationErrors(["Bad input values!"]);
+        if (values.name.length === 0) {
+            setValidationErrors(["Raamatu pealkiri ei saa olla tühi!"]);
+            return;
+        }
+
+        if (values.authors.length === 0) {
+            setValidationErrors(["Raamatul peab olema autor(id)!"]);
             return;
         }
 
