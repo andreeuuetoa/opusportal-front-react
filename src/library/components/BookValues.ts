@@ -5,7 +5,7 @@ const BookValues = (bookProps: BookProps) => {
     const eventHandler = (e: React.ChangeEvent) => {bookProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {
-        value: bookProps.bookData.name,
+        value: bookProps.bookData.title,
         type: "book-name",
         placeholder: "Nimi",
         autocomplete: "book-name",

@@ -11,7 +11,7 @@ export const BooksTable = (books: IGetBooksProps) => {
                     <tbody>
                     {
                         books.books.map(b => (
-                            <tr><BooksTableRow name={b.name} authors={b.authors}/></tr>))
+                            <tr><BooksTableRow title={b.title} authors={b.authors}/></tr>))
                     }
                     </tbody>
                 </table>

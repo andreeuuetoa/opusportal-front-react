@@ -9,7 +9,7 @@ export const AddBook = () => {
     const {setJWTResponse} = useContext(JWTContext);
 
     const [values, setValues] = useState({
-        name: "",
+        title: "",
         authors: ""
     } as BookData);
 
@@ -25,7 +25,7 @@ export const AddBook = () => {
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
-        if (values.name.length === 0) {
+        if (values.title.length === 0) {
             setValidationErrors(["Raamatu pealkiri ei saa olla tühi!"]);
             return;
         }

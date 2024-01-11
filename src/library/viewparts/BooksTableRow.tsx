@@ -5,7 +5,7 @@ export const BooksTableRow = (book: BookData) => {
     return (
         <>
             <td>
-                {book.name}
+                {book.title}
             </td>
             <td>
                 {book.authors}
