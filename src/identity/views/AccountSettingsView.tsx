@@ -35,12 +35,6 @@ export const AccountSettingsView = (passwordProps: PasswordProps) => {
                     }
                 </div>
                 <div className="float-child">
-                    <label>Kontaktid:</label>
-                    <input placeholder="Väärtus"/>
-                    <select placeholder="Tüüp">
-                        <option></option>
-                    </select>
-                    <p>+ Lisa kontakt</p>
                     <button
                         onClick={(e) => passwordProps.onSubmit(e)}
                         id="registerSubmit" className="w-50 btn btn-lg submit-btn">Salvesta muudatused</button>
