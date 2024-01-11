@@ -4,5 +4,6 @@ export interface RegisterData {
     confirmPassword: string,
     firstName: string,
     lastName: string,
-    roleName: string
+    roleName: string,
+    majorTeacher?: string
 }

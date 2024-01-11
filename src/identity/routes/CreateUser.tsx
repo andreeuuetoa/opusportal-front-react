@@ -1,9 +1,11 @@
 import {CreateUserView} from "../views/CreateUserView";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {RegisterData} from "../DTO/RegisterData";
 import {IdentityAPI} from "../API/IdentityAPI";
 import {JWTContext} from "../../root/Root";
 import {useNavigate} from "react-router-dom";
+import {UserData} from "../DTO/UserData";
+import {UserAPI} from "../API/UserAPI";
 
 export const CreateUser = () => {
     const [values, setValues] = useState({
@@ -15,13 +17,31 @@ export const CreateUser = () => {
         roleName: ""
     } as RegisterData);
 
+    const [teachers, setTeachers] = useState([] as UserData[]);
+
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
+
+    const userAPI = new UserAPI(setJWTResponse!);
+    useEffect(() => {
+        if (JWTResponse) {
+            userAPI.getTeachers(JWTResponse).then(
+                response => {
+                    if (response) {
+                        setTeachers(response);
+                    } else {
+                        // TODO: Delete JWT and redirect to sign-in page
+                        setTeachers([]);
+                    }
+                }
+            );
+        }
+    }, []);
+
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
     const handleChange = (target: EventTarget & HTMLInputElement) => {
         setValues({...values, [target.name]: target.value});
     };
-
-    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const identityAPI = new IdentityAPI();
     const navigate = useNavigate();
@@ -54,6 +74,11 @@ export const CreateUser = () => {
             return;
         }
 
+        if (values.roleName === "Student" && values.majorTeacher === undefined) {
+            setValidationErrors(["Õpilasel peab olema erialaõpetaja!"]);
+            return;
+        }
+
         // Remove errors
         setValidationErrors([]);
 
@@ -63,6 +88,6 @@ export const CreateUser = () => {
     };
 
     return (
-        <CreateUserView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <CreateUserView values={values} teachers={teachers} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
     );
 }

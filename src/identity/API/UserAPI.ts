@@ -22,4 +22,18 @@ export class UserAPI extends BaseEntityAPI<UserData> {
             return undefined;
         }
     }
+
+    async getTeachers(JWTData: JWTResponse): Promise<UserData[] | undefined> {
+        try {
+            const response = await this.axios.get<UserData[]>('Teachers');
+
+            if (response.status === 200) {
+                return response.data;
+            }
+            return undefined;
+        } catch (error) {
+            console.log('Error: ', (error as Error).message);
+            return undefined;
+        }
+    }
 }

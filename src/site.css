@@ -156,6 +156,10 @@ button.accept-policy {
     width: 66%;
 }
 
+.major-teacher-input {
+    width: 50%;
+}
+
 .float-child {
     width: 50%;
     float: left;

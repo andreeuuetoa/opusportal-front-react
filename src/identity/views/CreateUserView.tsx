@@ -1,11 +1,12 @@
 import {RegisterUserProps} from "../components/usermanagement/RegisterUserProps";
 import {FormPart} from "../../common/viewparts/FormPart";
-import React from "react";
+import React, {useState} from "react";
 import {EmailValues} from "../components/usermanagement/EmailValues";
 import {PasswordValues} from "../components/usermanagement/PasswordValues";
 import {ConfirmPasswordValues} from "../components/usermanagement/ConfirmPasswordValues";
 import {FirstNameValues} from "../components/usermanagement/FirstNameValues";
 import {LastNameValues} from "../components/usermanagement/LastNameValues";
+import {Select} from "antd";
 
 export const CreateUserView = (userProps: RegisterUserProps) => {
     const emailValues = EmailValues(userProps);
@@ -13,6 +14,8 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
     const confirmPasswordValues = ConfirmPasswordValues(userProps);
     const firstNameValues = FirstNameValues(userProps);
     const lastNameValues = LastNameValues(userProps);
+
+    const [newUserIsStudent, setNewUserIsStudent] = useState(false);
 
     return (
         <form id="registerForm" method="post" action="/src/identity/Account/Register">
@@ -34,17 +37,17 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
                 <div className="user-addition-page-roles">
                     <label className="float-child" htmlFor={"input_roleName"}>Roll kasutajal:</label>
                     <div className="float-child">
-                        <div className="form-check">
+                        <div className="form-check" onChange={() => setNewUserIsStudent(true)}>
                             <input className="form-check-input" type="radio" id="student" value="student"
                                    name="userRole"/>
                             <label className="form-check-label" htmlFor="student">Õpilane</label>
                         </div>
-                        <div className="form-check">
+                        <div className="form-check" onChange={() => setNewUserIsStudent(false)}>
                             <input className="form-check-input" type="radio" id="teacher" value="teacher"
                                    name="userRole"/>
                             <label className="form-check-label" htmlFor="teacher">Õpetaja</label>
                         </div>
-                        <div className="form-check">
+                        <div className="form-check" onChange={() => setNewUserIsStudent(false)}>
                             <input className="form-check-input" type="radio" id="other" value="other"
                                    name="userRole"/>
                             <label className="form-check-label" htmlFor="other">Muu</label>
@@ -53,11 +56,23 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
                 </div>
             </div>
             <div className="float-child">
-                <button
-                    onClick={(e) => userProps.onSubmit(e)}
-                    id="registerSubmit" className="w-50 btn btn-lg submit-btn">
-                    Loo kasutaja
-                </button>
+                <div className="mb-3 form-floating">
+                    {
+                        newUserIsStudent &&
+                        <Select>
+                            {userProps.teachers.map(teacher => (
+                                <Select.Option value={teacher.name}>{teacher.name}</Select.Option>
+                            ))}
+                        </Select>
+                    }
+                </div>
+                <div>
+                    <button
+                        onClick={(e) => userProps.onSubmit(e)}
+                        id="registerSubmit" className="w-50 btn btn-lg submit-btn">
+                        Loo kasutaja
+                    </button>
+                </div>
             </div>
         </form>
     );
