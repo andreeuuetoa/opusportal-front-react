@@ -1,6 +1,7 @@
+import {UserData} from "./UserData";
+
 export interface JWTResponse {
     JWT: string;
     refreshToken: string;
-    role: string;
-    firstName: string;
+    userData: UserData;
 }

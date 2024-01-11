@@ -7,9 +7,9 @@ import {JWTContext} from "../../root/Root";
 export const Dashboard = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
-    if (JWTResponse?.role === "Student") {
+    if (JWTResponse?.userData.roleName === "Student") {
         return <StudentDashboard/>;
-    } else if (JWTResponse?.role === "Teacher") {
+    } else if (JWTResponse?.userData.roleName === "Teacher") {
         return <TeacherDashboard/>;
     } else {
         return <ErrorPage/>;
