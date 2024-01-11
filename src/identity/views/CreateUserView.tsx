@@ -16,6 +16,11 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
     const lastNameValues = LastNameValues(userProps);
 
     const [newUserIsStudent, setNewUserIsStudent] = useState(false);
+    const teachers = [
+        {name: "Maarika Mägi"},
+        {name: "Jaanus Põld"},
+        {name: "Olga Pekareva"}
+    ];
 
     return (
         <form id="registerForm" method="post" action="/src/identity/Account/Register">
@@ -64,7 +69,7 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
                             <br/>
                             <select name="majorTeacher">
                                 <option></option>
-                                {userProps.teachers.map(teacher => (
+                                {teachers.map(teacher => (
                                     <option id={teacher.name} value={teacher.name}>{teacher.name}</option>
                                 ))}
                             </select>
