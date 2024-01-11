@@ -46,7 +46,11 @@ export const EditUser = () => {
         // Remove errors
         setValidationErrors([]);
 
-        const updatedUser = await userAPI.updateUser(id!, newUserData);
+        if (id === undefined) {
+            setValidationErrors(["Vabandust. Kasutajat, keda taheti uuendada, ei ole valitud."]);
+            return;
+        }
+        const updatedUser = await userAPI.updateUser(id, newUserData);
 
         if (updatedUser === undefined) {
             setValidationErrors(["Vabandust, midagi läks valesti. Kasutajat ei saadud uuendada."]);
