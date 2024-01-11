@@ -11,11 +11,11 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
 
     async getAll(JWT: JWTResponse): Promise<TEntity[] | undefined> {
         try {
-            const [response] = await Promise.all([this.axios.get<TEntity[] | undefined>('', {
+            const response = await this.axios.get<TEntity[] | undefined>('', {
                 headers: {
                     'Authorization': 'Bearer ' + JWT.JWT
                 }
-            })]);
+            });
 
             this.axios.interceptors.request.use(request => {
                 console.log(request.headers);
