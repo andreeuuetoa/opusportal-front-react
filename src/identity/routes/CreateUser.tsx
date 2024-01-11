@@ -8,7 +8,7 @@ import {UserData} from "../DTO/UserData";
 import {UserAPI} from "../API/UserAPI";
 
 export const CreateUser = () => {
-    const [values, setValues] = useState({
+    const [newUserData, setNewUserData] = useState({
         email: "",
         password: "",
         confirmPassword: "",
@@ -40,7 +40,7 @@ export const CreateUser = () => {
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
     const handleChange = (target: EventTarget & HTMLInputElement) => {
-        setValues({...values, [target.name]: target.value});
+        setNewUserData({...newUserData, [target.name]: target.value});
     };
 
     const identityAPI = new IdentityAPI();
@@ -49,32 +49,32 @@ export const CreateUser = () => {
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
-        if (values.firstName.length === 0) {
+        if (newUserData.firstName.length === 0) {
             setValidationErrors(["Kasutaja eesnimi ei saa olla tühi!"]);
             return;
         }
 
-        if (values.lastName.length === 0) {
+        if (newUserData.lastName.length === 0) {
             setValidationErrors(["Kasutaja perenimi ei saa olla tühi!"]);
             return;
         }
 
-        if (values.email.length === 0) {
+        if (newUserData.email.length === 0) {
             setValidationErrors(["Kasutaja meiliaadress ei saa olla tühi!"]);
             return;
         }
 
-        if (values.password.length === 0) {
+        if (newUserData.password.length === 0) {
             setValidationErrors(["Kasutajal peab olema salasõna!"]);
             return;
         }
 
-        if (values.password !== values.confirmPassword) {
+        if (newUserData.password !== newUserData.confirmPassword) {
             setValidationErrors(["Salasõnad ei ühti!"]);
             return;
         }
 
-        if (values.roleName === "Student" && values.majorTeacher === undefined) {
+        if (newUserData.roleName === "Student" && newUserData.majorTeacher === undefined) {
             setValidationErrors(["Õpilasel peab olema erialaõpetaja!"]);
             return;
         }
@@ -82,12 +82,12 @@ export const CreateUser = () => {
         // Remove errors
         setValidationErrors([]);
 
-        await identityAPI.register(values);
+        await identityAPI.register(newUserData);
 
         navigate("/kasutajad");
     };
 
     return (
-        <CreateUserView values={values} teachers={teachers} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <CreateUserView newUserData={newUserData} teachers={teachers} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
     );
 }

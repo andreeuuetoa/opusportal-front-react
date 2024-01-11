@@ -8,7 +8,7 @@ import {UserDataToEdit} from "../DTO/UserDataToEdit";
 export const EditUser = () => {
     const { id } = useParams();
 
-    const [values, setValues] = useState({
+    const [newUserData, setNewUserData] = useState({
         email: "",
         firstName: "",
         lastName: "",
@@ -18,7 +18,7 @@ export const EditUser = () => {
     const [validationErrors, setValidationErrors] = useState([] as string[]);
 
     const handleChange = (target: EventTarget & HTMLInputElement) => {
-        setValues({...values, [target.name]: target.value});
+        setNewUserData({...newUserData, [target.name]: target.value});
     };
 
     const {setJWTResponse} = useContext(JWTContext);
@@ -28,17 +28,17 @@ export const EditUser = () => {
     const onSubmit = async (event: React.MouseEvent) => {
         event.preventDefault();
 
-        if (values.firstName.length === 0) {
+        if (newUserData.firstName.length === 0) {
             setValidationErrors(["Kasutaja eesnimi ei saa olla tühi!"]);
             return;
         }
 
-        if (values.lastName.length === 0) {
+        if (newUserData.lastName.length === 0) {
             setValidationErrors(["Kasutaja perenimi ei saa olla tühi!"]);
             return;
         }
 
-        if (values.email.length === 0) {
+        if (newUserData.email.length === 0) {
             setValidationErrors(["Kasutaja meiliaadress ei saa olla tühi!"]);
             return;
         }
@@ -46,7 +46,7 @@ export const EditUser = () => {
         // Remove errors
         setValidationErrors([]);
 
-        const updatedUser = await userAPI.updateUser(id!, values);
+        const updatedUser = await userAPI.updateUser(id!, newUserData);
 
         if (updatedUser === undefined) {
             setValidationErrors(["Vabandust, midagi läks valesti. Kasutajat ei saadud uuendada."]);
@@ -55,6 +55,6 @@ export const EditUser = () => {
     };
 
     return (
-        <EditUserView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <EditUserView newUserData={newUserData} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
     );
 }

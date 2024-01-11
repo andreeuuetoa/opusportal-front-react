@@ -5,7 +5,7 @@ export const PasswordValues = (userProps: RegisterUserProps) => {
     const eventHandler = (e: React.ChangeEvent) => {userProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {
-        value: userProps.values.password,
+        value: userProps.newUserData.password,
         type: "password",
         placeholder: "Salasõna",
         autocomplete: "new-password",

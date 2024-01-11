@@ -3,7 +3,7 @@ import {RegisterData} from "../../DTO/RegisterData";
 import {UserData} from "../../DTO/UserData";
 
 export interface RegisterUserProps {
-    values: RegisterData;
+    newUserData: RegisterData;
 
     teachers: UserData[];
 

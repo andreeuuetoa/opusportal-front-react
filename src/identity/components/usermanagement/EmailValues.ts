@@ -6,7 +6,7 @@ export const EmailValues = (userProps: RegisterUserProps | EditUserProps) => {
     const eventHandler = (e: React.ChangeEvent) => {userProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {
-        value: userProps.values.email,
+        value: userProps.newUserData.email,
         type: "email",
         placeholder: "Kasutajatunnus",
         autocomplete: "username",

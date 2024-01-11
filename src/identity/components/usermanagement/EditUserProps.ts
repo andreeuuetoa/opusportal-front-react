@@ -2,7 +2,7 @@ import {UserDataToEdit} from "../../DTO/UserDataToEdit";
 import React from "react";
 
 export interface EditUserProps {
-    values: UserDataToEdit;
+    newUserData: UserDataToEdit;
 
     handleChange: (target:
                        EventTarget & HTMLInputElement) => void;

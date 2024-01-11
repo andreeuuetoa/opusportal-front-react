@@ -6,7 +6,7 @@ export const LastNameValues = (userProps: RegisterUserProps | EditUserProps) => 
     const eventHandler = (e: React.ChangeEvent) => {userProps.handleChange(e.target as EventTarget & HTMLInputElement)};
 
     return {
-        value: userProps.values.lastName,
+        value: userProps.newUserData.lastName,
         type: "text",
         placeholder: "Perekonnanimi",
         autocomplete: "lastname",
