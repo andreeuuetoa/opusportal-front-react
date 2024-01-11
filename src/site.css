@@ -164,3 +164,9 @@ button.accept-policy {
     width: 50%;
     float: left;
 }
+
+.dashboard-table {
+    width: 80%;
+    align-self: center;
+    border: black;
+}

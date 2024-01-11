@@ -1,5 +1,5 @@
-import { StudentDashboard } from "../views/StudentDashboard";
-import {TeacherDashboard} from "../views/TeacherDashboard";
+import { StudentDashboard } from "./StudentDashboard";
+import {TeacherDashboard} from "./TeacherDashboard";
 import {ErrorPage} from "../../common/routes/ErrorPage";
 import {useContext} from "react";
 import {JWTContext} from "../../root/Root";

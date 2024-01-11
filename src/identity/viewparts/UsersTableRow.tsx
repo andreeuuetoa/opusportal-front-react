@@ -5,7 +5,7 @@ export const UsersTableRow = (user: UserData) => {
     return (
         <tr>
             <td>
-                {user.name}
+                {user.firstName} {user.lastName}
             </td>
             <td>
                 {user.roleName}

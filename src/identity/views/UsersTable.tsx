@@ -11,7 +11,7 @@ export const UsersTable = (users: IGetUsersProps) => {
                     <tbody>
                     {
                         users.users.map(user => (
-                            <UsersTableRow name={user.name} roleName={user.roleName}/>))
+                            <UsersTableRow firstName={user.firstName} lastName={user.lastName} roleName={user.roleName}/>))
                     }
                     </tbody>
                 </table>

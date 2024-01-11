@@ -13,7 +13,7 @@ import {SignIn} from "./identity/routes/SignIn";
 import {Privacy} from "./common/routes/Privacy";
 import {Books} from "./library/routes/Books";
 import {SignOut} from './identity/routes/SignOut';
-import {AdminDashboard} from "./dashboard/views/AdminDashboard";
+import {AdminDashboard} from "./dashboard/routes/AdminDashboard";
 import {AddBook} from "./library/routes/AddBook";
 import {Dashboard} from "./dashboard/routes/Dashboard";
 import {Root} from "./root/Root";
