@@ -6,7 +6,7 @@ import {PasswordValues} from "../components/usermanagement/PasswordValues";
 import {ConfirmPasswordValues} from "../components/usermanagement/ConfirmPasswordValues";
 import {FirstNameValues} from "../components/usermanagement/FirstNameValues";
 import {LastNameValues} from "../components/usermanagement/LastNameValues";
-import {Select} from "antd";
+import "../../site.css";
 
 export const CreateUserView = (userProps: RegisterUserProps) => {
     const emailValues = EmailValues(userProps);
@@ -56,14 +56,19 @@ export const CreateUserView = (userProps: RegisterUserProps) => {
                 </div>
             </div>
             <div className="float-child">
-                <div className="mb-3 form-floating">
+                <div className="mb-3">
                     {
                         newUserIsStudent &&
-                        <Select>
-                            {userProps.teachers.map(teacher => (
-                                <Select.Option value={teacher.name}>{teacher.name}</Select.Option>
-                            ))}
-                        </Select>
+                        <>
+                            <label htmlFor="input_majorTeacher">Erialaõpetaja:</label>
+                            <br/>
+                            <select name="majorTeacher">
+                                <option></option>
+                                {userProps.teachers.map(teacher => (
+                                    <option id={teacher.name} value={teacher.name}>{teacher.name}</option>
+                                ))}
+                            </select>
+                        </>
                     }
                 </div>
                 <div>
