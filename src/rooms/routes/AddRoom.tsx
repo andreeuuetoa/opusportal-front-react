@@ -6,7 +6,7 @@ import {RoomAPI} from "../API/RoomAPI";
 import {RoomData} from "../DTO/RoomData";
 
 const AddRoom = () => {
-    const {setJWTResponse} = useContext(JWTContext);
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const [values, setValues] = useState({
         roomNumber: ""
@@ -32,7 +32,11 @@ const AddRoom = () => {
         // Remove errors
         setValidationErrors([]);
 
-        await roomAPI.create(values);
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        await roomAPI.create(values, JWTResponse);
 
         navigate("/ruumid");
     };

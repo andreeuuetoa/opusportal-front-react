@@ -17,7 +17,7 @@ export const CreateCompetition = () => {
         setValues({...values, [target.name]: target.value});
     };
 
-    const {setJWTResponse} = useContext(JWTContext);
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const competitionAPI = new CompetitionAPI(setJWTResponse!);
     const navigate = useNavigate();
@@ -33,7 +33,11 @@ export const CreateCompetition = () => {
         // Remove errors
         setValidationErrors([]);
 
-        await competitionAPI.create(values);
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        await competitionAPI.create(values, JWTResponse);
 
         navigate("/konkursid");
     };

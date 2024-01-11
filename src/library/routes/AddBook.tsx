@@ -6,7 +6,7 @@ import {BookAPI} from "../API/BookAPI";
 import {useNavigate} from "react-router-dom";
 
 export const AddBook = () => {
-    const {setJWTResponse} = useContext(JWTContext);
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const [values, setValues] = useState({
         title: "",
@@ -38,7 +38,11 @@ export const AddBook = () => {
         // Remove errors
         setValidationErrors([]);
 
-        await bookAPI.create(values);
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        await bookAPI.create(values, JWTResponse);
 
         navigate("/raamatud");
     };

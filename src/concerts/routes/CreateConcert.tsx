@@ -23,7 +23,7 @@ export const CreateConcert = () => {
         setValues({...values, [target.name]: target.value});
     };
 
-    const {setJWTResponse} = useContext(JWTContext);
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const concertAPI = new ConcertAPI(setJWTResponse!);
     const navigate = useNavigate();
@@ -44,7 +44,11 @@ export const CreateConcert = () => {
         // Remove errors
         setValidationErrors([]);
 
-        await concertAPI.create(values);
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        await concertAPI.create(values, JWTResponse);
 
         if (competitionId !== undefined) {
             console.log("ID on olemas!");
