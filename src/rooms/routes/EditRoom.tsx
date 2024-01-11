@@ -18,7 +18,7 @@ const EditRoom = () => {
         setValues({...values, [target.name]: target.value});
     };
 
-    const {setJWTResponse} = useContext(JWTContext);
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const roomAPI = new RoomAPI(setJWTResponse!);
 
@@ -33,7 +33,11 @@ const EditRoom = () => {
         // Remove errors
         setValidationErrors([]);
 
-        const updatedRoom = await roomAPI.updateRoom(id!, values);
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        const updatedRoom = await roomAPI.update(id!, values, JWTResponse);
 
         if (updatedRoom === undefined) {
             setValidationErrors(["Oops, something went wrong. Unable to update user."]);

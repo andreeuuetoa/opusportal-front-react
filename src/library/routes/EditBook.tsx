@@ -8,7 +8,7 @@ import EditBookView from "../views/EditBookView";
 const EditBook = () => {
     const { id } = useParams();
 
-    const {setJWTResponse} = useContext(JWTContext);
+    const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
     const [values, setValues] = useState({
         title: "",
@@ -40,7 +40,11 @@ const EditBook = () => {
         // Remove errors
         setValidationErrors([]);
 
-        const updatedUser = await bookAPI.updateBook(id!, values);
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        const updatedUser = await bookAPI.update(id!, values, JWTResponse);
 
         if (updatedUser === undefined) {
             setValidationErrors(["Vabandust, midagi läks valesti. Raamatut ei saadud uuendada."]);
