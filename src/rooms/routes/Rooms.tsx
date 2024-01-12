@@ -4,6 +4,7 @@ import {RoomAPI} from "../API/RoomAPI";
 import {RoomData} from "../DTO/RoomData";
 import {Link} from "react-router-dom";
 import RoomsTable from "../views/RoomsTable";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 const Rooms = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -31,6 +32,7 @@ const Rooms = () => {
 
     return (
         <>
+            <AdminNavbar/>
             <div className="float-child">
                 <br/>
                 <RoomsTable rooms={data}/>

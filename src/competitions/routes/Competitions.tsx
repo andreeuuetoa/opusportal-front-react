@@ -6,6 +6,7 @@ import {ConcertAPI} from "../../concerts/API/ConcertAPI";
 import {ConcertData} from "../../concerts/DTO/ConcertData";
 import {CompetitionAPI} from "../API/CompetitionAPI";
 import {CompetitionData} from "../DTO/CompetitionData";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const Competitions = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -30,6 +31,7 @@ export const Competitions = () => {
 
     return (
         <>
+            <AdminNavbar/>
             <div className="float-child">
                 <br/>
                 <CompetitionsTable competitions={data}/>

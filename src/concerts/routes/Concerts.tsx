@@ -4,6 +4,7 @@ import {useContext, useEffect, useState} from "react";
 import {ConcertData} from "../DTO/ConcertData";
 import {JWTContext} from "../../root/Root";
 import {ConcertAPI} from "../API/ConcertAPI";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const Concerts = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -28,6 +29,7 @@ export const Concerts = () => {
 
     return (
         <>
+            <AdminNavbar/>
             <div className="float-child">
                 <br/>
                 <ConcertsTable concerts={data}/>

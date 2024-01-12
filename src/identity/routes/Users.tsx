@@ -4,6 +4,7 @@ import {UserData} from "../DTO/UserData";
 import {UsersTable} from "../views/UsersTable";
 import {UserAPI} from "../API/UserAPI";
 import {Link} from "react-router-dom";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const Users = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -28,6 +29,7 @@ export const Users = () => {
 
     return (
         <>
+            <AdminNavbar/>
             <div className="float-child">
                 <br/>
                 <UsersTable users={data}/>

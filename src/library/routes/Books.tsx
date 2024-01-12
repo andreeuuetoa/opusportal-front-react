@@ -4,6 +4,7 @@ import {BookAPI} from "../API/BookAPI";
 import {BookData} from "../DTO/BookData";
 import {BooksTable} from "../views/BooksTable";
 import {Link} from "react-router-dom";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 
 export const Books = () => {
@@ -32,6 +33,7 @@ export const Books = () => {
 
     return (
         <>
+            <AdminNavbar/>
             <div className="float-child">
                 <br/>
                 <BooksTable books={data}/>
