@@ -11,21 +11,7 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
 
     async getAll(JWT: JWTResponse): Promise<TEntity[] | undefined> {
         try {
-            const response = await this.axios.get<TEntity[] | undefined>('', {
-                headers: {
-                    'Authorization': 'Bearer ' + JWT.JWT
-                }
-            });
-
-            this.axios.interceptors.request.use(request => {
-                console.log(request.headers);
-                return request;
-            });
-
-            if (response.status === 200) {
-                return response.data;
-            }
-            return undefined;
+            await this.getAllRequest(JWT);
         } catch (error) {
             if ((error as AxiosError).response?.status === 401) {
                 let identityService = new IdentityAPI();
@@ -33,33 +19,34 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
 
                 if (refreshedJWT) {
                     this.setJwtResponse(refreshedJWT);
-                    const [response] = await Promise.all([this.axios.get<TEntity[] | undefined>('', {
-                        headers: {
-                            'Authorization': 'Bearer ' + JWT.JWT
-                        }
-                    })]);
-                    if (response.status === 200) {
-                        return response.data;
-                    }
+                    await this.getAllRequest(refreshedJWT);
                 }
             }
             return undefined;
         }
+    }
+
+    async getAllRequest(JWT: JWTResponse): Promise<TEntity[] | undefined> {
+        const response = await this.axios.get<TEntity[] | undefined>('', {
+            headers: {
+                'Authorization': 'Bearer ' + JWT.JWT
+            }
+        });
+
+        this.axios.interceptors.request.use(request => {
+            console.log(request.headers);
+            return request;
+        });
+
+        if (response.status === 200) {
+            return response.data;
+        }
+        return undefined;
     }
 
     async create(data: TEntity, JWT: JWTResponse) {
         try {
-            const response = await this.axios.post<TEntity>('', data, {
-                headers: {
-                    'Authorization': 'Bearer ' + JWT.JWT
-                }
-            });
-
-            console.log('Response: ', response);
-            if (response.status === 201) {
-                return response.data;
-            }
-            return undefined;
+            await this.createRequest(data, JWT);
         } catch (error) {
             if ((error as AxiosError).response?.status === 401) {
                 let identityService = new IdentityAPI();
@@ -67,33 +54,30 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
 
                 if (refreshedJWT) {
                     this.setJwtResponse(refreshedJWT);
-                    const [response] = await Promise.all([this.axios.get<TEntity[] | undefined>('', {
-                        headers: {
-                            'Authorization': 'Bearer ' + JWT.JWT
-                        }
-                    })]);
-                    if (response.status === 200) {
-                        return response.data;
-                    }
+                    await this.createRequest(data, refreshedJWT);
                 }
             }
             return undefined;
         }
     }
 
-    async update(id: string, data: TEntity, JWT: JWTResponse) {
-        try {
-            const response = await this.axios.put<TEntity>('', data, {
-                headers: {
-                    'Authorization': 'Bearer ' + JWT.JWT
-                }
-            });
-
-            console.log('Response: ', response);
-            if (response.status === 201) {
-                return response.data;
+    async createRequest(data: TEntity, JWT: JWTResponse): Promise<TEntity | undefined> {
+        const response = await this.axios.post<TEntity>('', data, {
+            headers: {
+                'Authorization': 'Bearer ' + JWT.JWT
             }
-            return undefined;
+        });
+
+        console.log('Response: ', response);
+        if (response.status === 201) {
+            return response.data;
+        }
+        return undefined;
+    }
+
+    async update(id: string, data: TEntity, JWT: JWTResponse): Promise<TEntity | undefined> {
+        try {
+            await this.updateRequest(id, data, JWT);
         } catch (error) {
             if ((error as AxiosError).response?.status === 401) {
                 let identityService = new IdentityAPI();
@@ -101,33 +85,30 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
 
                 if (refreshedJWT) {
                     this.setJwtResponse(refreshedJWT);
-                    const [response] = await Promise.all([this.axios.get<TEntity[] | undefined>('', {
-                        headers: {
-                            'Authorization': 'Bearer ' + JWT.JWT
-                        }
-                    })]);
-                    if (response.status === 200) {
-                        return response.data;
-                    }
+                    await this.updateRequest(id, data, refreshedJWT);
                 }
             }
             return undefined;
         }
+    }
+
+    async updateRequest(id: string, data: TEntity, JWT: JWTResponse) {
+        const response = await this.axios.put<TEntity>('', data, {
+            headers: {
+                'Authorization': 'Bearer ' + JWT.JWT
+            }
+        });
+
+        console.log('Response: ', response);
+        if (response.status === 201) {
+            return response.data;
+        }
+        return undefined;
     }
 
     async delete(id: string, JWT: JWTResponse) {
         try {
-            const response = await this.axios.delete('', {
-                headers: {
-                    'Authorization': 'Bearer ' + JWT.JWT
-                }
-            });
-
-            console.log('Response: ', response);
-            if (response.status === 201) {
-                return response.data;
-            }
-            return undefined;
+            await this.deleteRequest(id, JWT);
         } catch (error) {
             if ((error as AxiosError).response?.status === 401) {
                 let identityService = new IdentityAPI();
@@ -135,17 +116,24 @@ export abstract class BaseEntityAPI<TEntity extends IBaseEntity> extends BaseAPI
 
                 if (refreshedJWT) {
                     this.setJwtResponse(refreshedJWT);
-                    const [response] = await Promise.all([this.axios.get<TEntity[] | undefined>('', {
-                        headers: {
-                            'Authorization': 'Bearer ' + JWT.JWT
-                        }
-                    })]);
-                    if (response.status === 200) {
-                        return response.data;
-                    }
+                    await this.deleteRequest(id, refreshedJWT);
                 }
             }
             return undefined;
         }
+    }
+
+    async deleteRequest(id: string, JWT: JWTResponse): Promise<any> {
+        const response = await this.axios.delete('', {
+            headers: {
+                'Authorization': 'Bearer ' + JWT.JWT
+            }
+        });
+
+        console.log('Response: ', response);
+        if (response.status === 200) {
+            return response.data;
+        }
+        return undefined;
     }
 }
