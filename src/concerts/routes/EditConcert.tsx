@@ -4,8 +4,11 @@ import {ConcertData} from "../DTO/ConcertData";
 import {JWTContext} from "../../root/Root";
 import {ConcertAPI} from "../API/ConcertAPI";
 import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
+import {useParams} from "react-router-dom";
 
 export const EditConcert = () => {
+    const {id} = useParams();
+
     const [values, setValues] = useState({
         name: "",
         location: ""
@@ -33,6 +36,16 @@ export const EditConcert = () => {
         // Remove errors
         setValidationErrors([]);
 
+        if (JWTResponse === null) {
+            setValidationErrors(["No JWT!"]);
+            return;
+        }
+        const updatedRoom = await concertAPI.update(id!, values, JWTResponse);
+
+        if (updatedRoom === undefined) {
+            setValidationErrors(["Oops, something went wrong. Unable to update user."]);
+            return;
+        }
     };
     return (
         <>
