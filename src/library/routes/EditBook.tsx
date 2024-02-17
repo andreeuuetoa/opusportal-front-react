@@ -4,9 +4,10 @@ import {BookData} from "../DTO/BookData";
 import {BookAPI} from "../API/BookAPI";
 import {useNavigate, useParams} from "react-router-dom";
 import EditBookView from "../views/EditBookView";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 const EditBook = () => {
-    const { id } = useParams();
+    const {id} = useParams();
 
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
 
@@ -55,7 +56,11 @@ const EditBook = () => {
     };
 
     return (
-        <EditBookView bookData={values} onSubmit={onSubmit} handleChange={handleChange} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <EditBookView bookData={values} onSubmit={onSubmit} handleChange={handleChange}
+                          validationErrors={validationErrors}/>
+        </>
     );
 }
 

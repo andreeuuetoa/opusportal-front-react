@@ -6,6 +6,7 @@ import {JWTContext} from "../../root/Root";
 import {useNavigate} from "react-router-dom";
 import {UserData} from "../DTO/UserData";
 import {UserAPI} from "../API/UserAPI";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const CreateUser = () => {
     const [newUserData, setNewUserData] = useState({
@@ -88,6 +89,10 @@ export const CreateUser = () => {
     };
 
     return (
-        <CreateUserView newUserData={newUserData} teachers={teachers} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <CreateUserView newUserData={newUserData} teachers={teachers} handleChange={handleChange}
+                            onSubmit={onSubmit} validationErrors={validationErrors}/>
+        </>
     );
 }

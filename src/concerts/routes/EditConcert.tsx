@@ -2,8 +2,8 @@ import {EditConcertView} from "../views/EditConcertView";
 import React, {useContext, useState} from "react";
 import {ConcertData} from "../DTO/ConcertData";
 import {JWTContext} from "../../root/Root";
-import {IdentityAPI} from "../../identity/API/IdentityAPI";
 import {ConcertAPI} from "../API/ConcertAPI";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const EditConcert = () => {
     const [values, setValues] = useState({
@@ -35,6 +35,10 @@ export const EditConcert = () => {
 
     };
     return (
-        <EditConcertView values={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <EditConcertView values={values} handleChange={handleChange} onSubmit={onSubmit}
+                             validationErrors={validationErrors}/>
+        </>
     );
 }

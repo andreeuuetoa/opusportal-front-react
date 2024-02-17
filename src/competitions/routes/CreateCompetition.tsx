@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {CompetitionData} from "../DTO/CompetitionData";
 import {CompetitionAPI} from "../API/CompetitionAPI";
 import {CreateCompetitionView} from "../views/CreateCompetitionView";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const CreateCompetition = () => {
     const [values, setValues] = useState({
@@ -43,7 +44,10 @@ export const CreateCompetition = () => {
     };
 
     return (
-        <CreateCompetitionView values={values} handleChange={handleChange} onSubmit={onSubmit}
-                           validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <CreateCompetitionView values={values} handleChange={handleChange} onSubmit={onSubmit}
+                                   validationErrors={validationErrors}/>
+        </>
     );
 }

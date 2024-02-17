@@ -4,6 +4,7 @@ import {JWTContext} from "../../root/Root";
 import {useNavigate} from "react-router-dom";
 import {RoomAPI} from "../API/RoomAPI";
 import {RoomData} from "../DTO/RoomData";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 const AddRoom = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -42,7 +43,11 @@ const AddRoom = () => {
     };
 
     return (
-        <AddRoomView roomData={values} onSubmit={onSubmit} handleChange={handleChange} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <AddRoomView roomData={values} onSubmit={onSubmit} handleChange={handleChange}
+                         validationErrors={validationErrors}/>
+        </>
     );
 }
 

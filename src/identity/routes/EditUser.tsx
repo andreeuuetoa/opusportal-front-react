@@ -4,9 +4,10 @@ import {JWTContext} from "../../root/Root";
 import {useParams} from "react-router-dom";
 import {UserAPI} from "../API/UserAPI";
 import {UserDataToEdit} from "../DTO/UserDataToEdit";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const EditUser = () => {
-    const { id } = useParams();
+    const {id} = useParams();
 
     const [newUserData, setNewUserData] = useState({
         email: "",
@@ -59,6 +60,10 @@ export const EditUser = () => {
     };
 
     return (
-        <EditUserView newUserData={newUserData} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <EditUserView newUserData={newUserData} handleChange={handleChange} onSubmit={onSubmit}
+                          validationErrors={validationErrors}/>
+        </>
     );
 }

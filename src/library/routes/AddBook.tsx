@@ -4,6 +4,7 @@ import {AddBookView} from "../views/AddBookView";
 import {JWTContext} from "../../root/Root";
 import {BookAPI} from "../API/BookAPI";
 import {useNavigate} from "react-router-dom";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const AddBook = () => {
     const {JWTResponse, setJWTResponse} = useContext(JWTContext);
@@ -48,6 +49,10 @@ export const AddBook = () => {
     };
 
     return (
-        <AddBookView bookData={values} onSubmit={onSubmit} handleChange={handleChange} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <AddBookView bookData={values} onSubmit={onSubmit} handleChange={handleChange}
+                         validationErrors={validationErrors}/>
+        </>
     );
 }

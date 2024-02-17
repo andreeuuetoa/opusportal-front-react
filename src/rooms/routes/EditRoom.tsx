@@ -4,9 +4,10 @@ import {JWTContext} from "../../root/Root";
 import {RoomData} from "../DTO/RoomData";
 import {RoomAPI} from "../API/RoomAPI";
 import EditRoomView from "../views/EditRoomView";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 const EditRoom = () => {
-    const { id } = useParams();
+    const {id} = useParams();
 
     const [values, setValues] = useState({
         roomNumber: ""
@@ -46,7 +47,11 @@ const EditRoom = () => {
     }
 
     return (
-        <EditRoomView roomData={values} handleChange={handleChange} onSubmit={onSubmit} validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <EditRoomView roomData={values} handleChange={handleChange} onSubmit={onSubmit}
+                          validationErrors={validationErrors}/>
+        </>
     );
 }
 

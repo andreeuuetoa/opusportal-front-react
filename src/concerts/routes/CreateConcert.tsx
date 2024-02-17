@@ -4,6 +4,7 @@ import {JWTContext} from "../../root/Root";
 import {ConcertData} from "../DTO/ConcertData";
 import {ConcertAPI} from "../API/ConcertAPI";
 import {useNavigate, useParams} from "react-router-dom";
+import {AdminNavbar} from "../../common/viewparts/AdminNavbar";
 
 export const CreateConcert = () => {
     const [values, setValues] = useState({
@@ -12,7 +13,7 @@ export const CreateConcert = () => {
         competitionId: undefined
     } as ConcertData);
 
-    const { competitionId } = useParams();
+    const {competitionId} = useParams();
     if (competitionId !== undefined) {
         values.competitionId = competitionId;
     }
@@ -59,7 +60,10 @@ export const CreateConcert = () => {
     };
 
     return (
-        <CreateConcertView values={values} handleChange={handleChange} onSubmit={onSubmit}
-                           validationErrors={validationErrors}/>
+        <>
+            <AdminNavbar/>
+            <CreateConcertView values={values} handleChange={handleChange} onSubmit={onSubmit}
+                               validationErrors={validationErrors}/>
+        </>
     );
 }
